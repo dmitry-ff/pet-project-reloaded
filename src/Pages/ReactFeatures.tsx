@@ -48,15 +48,14 @@ function ReactFeatures() {
   return (
     <>
       <CeneteredComp>
-        {/* <Button
+        <Button
           sx={{
             width: 'fit-content',
             alignSelf: 'center',
           }}
-          margin='normal'
           color='warning'
           variant="outlined"
-          onClick={() => setCount(count => count + 1)}>{count}</Button> */}
+          onClick={() => setCount(count => count + 1)}>{count}</Button>
         <ForwardRef onClick={() => console.log('Click')} ref={ref} />
 
       </CeneteredComp>

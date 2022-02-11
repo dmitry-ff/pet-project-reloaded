@@ -31,11 +31,14 @@ const Portal = styled.div`
         cursor:pointer;
     }
 `
+interface IProps {
+  children: JSX.Element[] | JSX.Element
+};
 
-const Modal = (children: JSX.Element) => {
+const Modal = (props: IProps) => {
   return (
     <Portal>
-      {children}
+      {props.children}
     </Portal>
   )
 }
@@ -46,18 +49,21 @@ function Home() {
   const toggleModal = () => {
     setOpen(isOpen => !isOpen)
   }
+  const modalRoot = document.getElementById('modal-root');
   return (
     <>
       <CenteredHeader>
         <h2 onClick={toggleModal}>Home</h2>
       </CenteredHeader>
 
-
       {isOpen &&
-        ReactDOM.createPortal(<Modal>
-          <img style={{ width: '400px' }} src={dog} alt='dog' onClick={toggleModal} />
-        </Modal>,
-          document.getElementById('modal-root'))
+        modalRoot ?
+        ReactDOM.createPortal(
+          <Modal>
+            <img style={{ width: '400px' }} src={dog} alt='dog' onClick={toggleModal} />
+          </Modal>,
+          modalRoot)
+        : null
       }
     </>
   )

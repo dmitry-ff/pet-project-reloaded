@@ -14,9 +14,13 @@ import styled from '@emotion/styled';
 import PieChart from './Components/Charts/PieChart';
 import DoughnutChart from './Components/Charts/DoughnutChart';
 import BarChart from './Components/Charts/BarChart';
-import { UserData } from './Data/Data';
-// import Weather from './Pages/Weather';
+import LineChart from './Components/Charts/LineChart'
+import { userData, lineUserData } from './Data/Data';
+import Weather from './Pages/Weather';
 import ReactFeatures from './Pages/ReactFeatures';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+
 
 const StyledComp = styled.div`
     display:inline-block;
@@ -47,15 +51,15 @@ ReactDOM.render(
             element={<StyledComp>Select a chart!</StyledComp>}
           />
 
-          {/* <Route path='LineChart' element={<LineChart userData={UserData} />} /> */}
-          <Route path='PieChart' element={<PieChart data={UserData} />} />
-          <Route path='DoughnutChart' element={<DoughnutChart data={UserData} />} />
-          <Route path='BarChart' element={<BarChart data={UserData} />} />
+          <Route path='LineChart' element={<LineChart data={lineUserData} />} />
+          <Route path='PieChart' element={<PieChart data={userData} />} />
+          <Route path='DoughnutChart' element={<DoughnutChart data={userData} />} />
+          <Route path='BarChart' element={<BarChart data={userData} />} />
 
 
 
         </Route>
-        {/* <Route path='weather' element={<Weather />} /> */}
+        <Route path='Weather' element={<Weather />} />
         <Route path='reactfeatures' element={<ReactFeatures />} />
         <Route
           path="*"

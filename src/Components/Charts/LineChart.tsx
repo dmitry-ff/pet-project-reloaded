@@ -1,11 +1,12 @@
 import ChartWrapper from "../../Style/ChartWrapper";
-import { TUserData } from '../../Data/Types'
+import { TLineData } from '../../Data/Types'
+import { Line } from 'react-chartjs-2';
 
 
-function LineChart() {
+function LineChart({ data }: TLineData) {
   return (
     <ChartWrapper>
-      {/* <Line /> */}
+      <Line data={data} />
     </ChartWrapper>)
 }
 
