@@ -1,6 +1,6 @@
 export type TUserData = {
   data: {
-    labels: string[] | undefined;
+    labels: string[];
     datasets: {
       label: string;
       data: number[];
@@ -13,14 +13,12 @@ export type TUserData = {
 };
 export type TLineData = {
   data: {
-    labels: string;
+    labels: string[];
     datasets: {
       label: string;
       data: number[];
-      backgroundColor: CanvasPattern[];
-      borderColor: string[];
-      borderWidth: number;
-      hoverOffset: number;
+      borderColor: string;
+      backgroundColor: string;
     }[];
   }
 };
