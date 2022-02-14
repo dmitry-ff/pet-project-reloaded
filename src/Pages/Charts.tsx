@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { CHART_NAMES } from '../Data/Consts'
 import _ from 'lodash';
 import { NavLink, Outlet } from 'react-router-dom';
+import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 const ChartsNav = styled.div`
     width:fit-content;
     display: inline-block;
@@ -18,7 +19,7 @@ const ChartsNav = styled.div`
     };
 `;
 
-const Charts: React.FC = (): JSX.Element => {
+const Charts: React.FC = (): EmotionJSX.Element => {
   return (
     <>
       <ChartsNav>
