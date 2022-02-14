@@ -4,7 +4,7 @@ import { TUserData } from '../../Data/Types'
 
 import React from 'react'
 
-function BarChart({ data }: TUserData) {
+const BarChart: React.FC<TUserData> = ({ data }): EmotionJSX.Element => {
   return (
     <ChartWrapper>
       <Bar data={data} />

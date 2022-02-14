@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import styled
   from '@emotion/styled';
 import dog from '../Images/dog.svg'
+import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 
 const CenteredHeader = styled.div`
 display: flex;
@@ -35,15 +36,15 @@ interface IProps {
   children: JSX.Element[] | JSX.Element
 };
 
-const Modal = (props: IProps) => {
+const Modal: React.FC<IProps> = ({ children }) => {
   return (
     <Portal>
-      {props.children}
+      {children}
     </Portal>
   )
 }
 
-function Home() {
+const Home: React.FC = (): EmotionJSX.Element => {
 
   const [isOpen, setOpen] = React.useState(false);
   const toggleModal = () => {

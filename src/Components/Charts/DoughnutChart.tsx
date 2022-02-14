@@ -1,9 +1,11 @@
 import { Doughnut } from 'react-chartjs-2';
 import ChartWrapper from "../../Style/ChartWrapper";
 import { TUserData } from '../../Data/Types'
+import React from 'react';
+import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 
 
-function DoughnutChart({ data }: TUserData) {
+const DoughnutChart: React.FC<TUserData> = ({ data }): EmotionJSX.Element => {
   return (
     <ChartWrapper>
       <Doughnut data={data} />

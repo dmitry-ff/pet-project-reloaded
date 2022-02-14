@@ -2,8 +2,9 @@ import React from 'react'
 import { Link, Outlet } from 'react-router-dom';
 import { NavigationDiv, Logo, Navbar } from '../Style/Navigation';
 import dog from '../Images/dog.svg';
+import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 
-function Navigation() {
+const Navigation: React.FC = (): EmotionJSX.Element => {
   return (
     <>
       <NavigationDiv>

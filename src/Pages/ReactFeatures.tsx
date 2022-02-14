@@ -2,6 +2,7 @@ import React, { forwardRef } from 'react'
 import styled from '@emotion/styled';
 import _ from 'lodash'
 import { Button } from '@mui/material';
+import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 
 
 const CeneteredComp = styled.div`
@@ -13,21 +14,21 @@ const CeneteredComp = styled.div`
 type TProps = {
   onClick: () => void;
 }
-const ForwardRef = forwardRef((props: TProps, ref) => {
+const ForwardRef = forwardRef((props: TProps, ref: React.Ref<HTMLDivElement>) => {
   const { onClick } = props;
   return (
-    <div></div>
+    <div ref={ref}></div>
   )
 })
 
-function createUser(firstWord: string, secondWord: string) {
-  const user = { firstWord, secondWord };
+function createUser(name: string, surname: string): { name: string, surname: string } {
+  const user = { name, surname };
   console.log(user);
   return user;
 }
 
-function ReactFeatures() {
-  const ref = React.useRef();
+const ReactFeatures: React.FC = (): EmotionJSX.Element => {
+  const ref = React.useRef<HTMLDivElement>(null);
   const [message, setMessage] = React.useState('Hello');
   const [count, setCount] = React.useState(0);
   const [name, setName] = React.useState('Dmitry');
@@ -35,7 +36,7 @@ function ReactFeatures() {
 
   const user = React.useMemo(() => { createUser(name, surname) }, [name, surname])
 
-  const sayHi = React.useCallback((text) => {
+  const sayHi = React.useCallback((text: string) => {
     console.log(text);
   }, []);
 

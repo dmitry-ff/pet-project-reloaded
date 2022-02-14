@@ -18,7 +18,7 @@ const ChartsNav = styled.div`
     };
 `;
 
-const Charts = () => {
+const Charts: React.FC = (): JSX.Element => {
   return (
     <>
       <ChartsNav>

@@ -2,6 +2,7 @@ import React from 'react';
 //import WeatherData from '../Components/WeatherData'
 import { Button, Input, Box, Link } from '@mui/material';
 import styled from '@emotion/styled';
+import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 
 
 const Heading = styled.h2`
@@ -11,7 +12,7 @@ const Heading = styled.h2`
     color: rgb(66, 66, 66);
 `
 
-function Weather() {
+const Weather: React.FC = (): EmotionJSX.Element => {
 
   const [url, setUrl] = React.useState('');
   const [press, setPress] = React.useState(false);
@@ -31,7 +32,7 @@ function Weather() {
       flexDirection: 'column',
       alignItems: 'center',
       width: "100%",
-    }}>
+    }} >
       <form className='weatherForm' onSubmit={handleSubmit}>
         <Heading>Where you want to check the weather</Heading>
         <Box sx={{
@@ -68,7 +69,7 @@ function Weather() {
           href="https://www.weatherapi.com/">WeatherAPI.com
         </Link>
       </span>
-    </Box>
+    </Box >
   );
 }
 

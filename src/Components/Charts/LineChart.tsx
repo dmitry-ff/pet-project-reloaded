@@ -2,7 +2,7 @@ import ChartWrapper from "../../Style/ChartWrapper";
 import { TLineData } from '../../Data/Types'
 import { Line } from 'react-chartjs-2';
 
-function LineChart({ data }: TLineData) {
+const LineChart: React.FC<TLineData> = ({ data }) => {
   return (
     <ChartWrapper>
       <Line data={data} />

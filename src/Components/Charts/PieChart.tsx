@@ -1,8 +1,9 @@
 import ChartWrapper from "../../Style/ChartWrapper";
 import { Pie } from 'react-chartjs-2';
 import { TUserData } from '../../Data/Types'
+import { EmotionJSX } from "@emotion/react/types/jsx-namespace";
 
-function PieChart({ data }: TUserData) {
+const PieChart: React.FC<TUserData> = ({ data }): EmotionJSX.Element => {
   return (
     <ChartWrapper>
       <Pie data={data} />
