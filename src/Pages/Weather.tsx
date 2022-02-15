@@ -1,8 +1,9 @@
 import React from 'react';
 import WeatherData from '../Components/WeatherData'
-import { Button, Input, Box, Link } from '@mui/material';
+import { Button, Box, Link, TextField } from '@mui/material';
 import styled from '@emotion/styled';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
+import * as yup from 'yup';
 import { useFormik } from 'formik';
 
 
@@ -12,7 +13,11 @@ const Heading = styled.h2`
     text-align: center;
     color: rgb(66, 66, 66);
 `
-
+const validationSchema = yup.object({
+  text: yup
+    .string()
+    .required('This field is required')
+})
 const Weather: React.FC = (): EmotionJSX.Element => {
 
   const [url, setUrl] = React.useState<string>('');
@@ -48,15 +53,17 @@ const Weather: React.FC = (): EmotionJSX.Element => {
           justifyContent: 'space-evenly',
 
         }}>
-          <Input
+          <TextField
+            name="text"
+            id='text'
+            placeholder='...maybe in Paris?'
             margin='dense'
             fullWidth={true}
             value={InpValue}
             onChange={(e) => setValue(e.target.value)}
             type="text"
-            name='search'
-            id='search'
-            placeholder='...maybe in Paris?' />
+
+          />
           <Button
             sx={{
               width: 'fit-content',
