@@ -46,7 +46,7 @@ const Modal: React.FC<IProps> = ({ children }) => {
 
 const Home: React.FC = (): EmotionJSX.Element => {
 
-  const [isOpen, setOpen] = React.useState(false);
+  const [isOpen, setOpen] = React.useState<boolean>(false);
   const toggleModal = () => {
     setOpen(isOpen => !isOpen)
   }

@@ -3,6 +3,7 @@ import WeatherData from '../Components/WeatherData'
 import { Button, Input, Box, Link } from '@mui/material';
 import styled from '@emotion/styled';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
+import { useFormik } from 'formik';
 
 
 const Heading = styled.h2`
@@ -18,6 +19,8 @@ const Weather: React.FC = (): EmotionJSX.Element => {
   const [press, setPress] = React.useState<boolean>(false);
   const [InpValue, setValue] = React.useState<string>('');
   const [town, setTown] = React.useState<string>('')
+
+
   const handleSubmit = (event: React.MouseEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -51,6 +54,8 @@ const Weather: React.FC = (): EmotionJSX.Element => {
             value={InpValue}
             onChange={(e) => setValue(e.target.value)}
             type="text"
+            name='search'
+            id='search'
             placeholder='...maybe in Paris?' />
           <Button
             sx={{
