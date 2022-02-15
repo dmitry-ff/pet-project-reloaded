@@ -8,20 +8,20 @@ import { TResponse, TData } from '../Data/Types'
 
 type TProps = {
   apiURL: string;
+  townName: string
 }
 
 function WeatherData(props: TProps) {
-  const [data, setData] = React.useState<TData>([]);
-  const [loading, setLoading] = React.useState(true);
+  const [data, setData] = React.useState<TData[]>([]);
+  const [loading, setLoading] = React.useState<boolean>(true);
 
   React.useEffect(() => {
     setLoading(true);
     const source = axios.CancelToken.source();
     axios.get<TResponse>(props.apiURL, { cancelToken: source.token })
       .then(res => {
-        let items = res.data.forecast.forecastday;
-        // setData(_.slice(Object.entries(res.data.location), 0, 1));
-        // setData(data => [...data, ...items]);
+        let items = res.data;
+        setData(data => [...items.forecast.forecastday])
         setTimeout(() => setLoading(false), 1000)
         return res;
       })
@@ -43,8 +43,8 @@ function WeatherData(props: TProps) {
       {!loading
         &&
         <div>
-          <Weather loading={loading} nameHead={_.head(data)[1]} data={_.slice(data, 1)} />
-          <TemperatureChart loading={loading} chartData={_.slice(data, 1)} />
+          <Weather loading={loading} nameHead={props.townName} data={data} />
+          <TemperatureChart loading={loading} data={data} />
         </div>
 
       }

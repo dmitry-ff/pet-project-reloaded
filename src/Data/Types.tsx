@@ -29,39 +29,22 @@ export type TLoading = {
 };
 
 export type TData = {
-  data:
-  {
-    date: string,
-    day: {
-      maxtemp_c: number,
-      mintemp_c: number,
-      avgtemp_c: number,
-      maxwind_kph: number,
-      daily_chance_of_rain: number,
-      daily_chance_of_snow: number,
-      condition: {
-        text: string,
-        icon: string
-      }
+  date: string,
+  day: {
+    maxtemp_c: number,
+    mintemp_c: number,
+    avgtemp_c: number,
+    maxwind_kph: number,
+    daily_chance_of_rain: number,
+    daily_chance_of_snow: number,
+    condition: {
+      text: string,
+      icon: string
     }
-  }[]
+  }
 }
 
 export type TResponse = {
-  location: {
-    name: string,
-    region: string,
-    country: string,
-    lat: number,
-    lon: number,
-    tz_id: string,
-    localtime_epoch: number,
-    localtime: string
-  }
-  current: {
-    condition: {},
-    uv: number
-  },
   forecast: {
     forecastday:
     {
@@ -78,11 +61,6 @@ export type TResponse = {
           icon: string
         }
       },
-      astro: {},
-      hour: {
-        condition: {}
-      }[],
-
     }[]
   }
 }

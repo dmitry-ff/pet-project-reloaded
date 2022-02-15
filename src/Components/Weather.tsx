@@ -2,10 +2,27 @@ import _ from 'lodash';
 import React from 'react';
 import { WEEK_S } from '../Data/Consts'
 import { WeatherData, WeatherToday, FirstColumn, SecondColumn, FourthColumn, WeatherWeek, WeatherCard } from '../Style/Weather'
-import { TLoading, TData } from '../Data/Types'
+import { TLoading } from '../Data/Types'
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 type THead = {
   nameHead: string;
+}
+type TData = {
+  data: {
+    date: string,
+    day: {
+      maxtemp_c: number,
+      mintemp_c: number,
+      avgtemp_c: number,
+      maxwind_kph: number,
+      daily_chance_of_rain: number,
+      daily_chance_of_snow: number,
+      condition: {
+        text: string,
+        icon: string
+      }
+    }
+  }[]
 }
 
 const Weather: React.FC<TLoading & THead & TData> = ({ loading, nameHead, data }): EmotionJSX.Element => {

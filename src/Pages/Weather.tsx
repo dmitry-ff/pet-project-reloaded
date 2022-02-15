@@ -1,5 +1,5 @@
 import React from 'react';
-//import WeatherData from '../Components/WeatherData'
+import WeatherData from '../Components/WeatherData'
 import { Button, Input, Box, Link } from '@mui/material';
 import styled from '@emotion/styled';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
@@ -14,16 +14,17 @@ const Heading = styled.h2`
 
 const Weather: React.FC = (): EmotionJSX.Element => {
 
-  const [url, setUrl] = React.useState('');
-  const [press, setPress] = React.useState(false);
-  const [InpValue, setValue] = React.useState('')
-
+  const [url, setUrl] = React.useState<string>('');
+  const [press, setPress] = React.useState<boolean>(false);
+  const [InpValue, setValue] = React.useState<string>('');
+  const [town, setTown] = React.useState<string>('')
   const handleSubmit = (event: React.MouseEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     setUrl(url => url =
       `http://api.weatherapi.com/v1/forecast.json?key=3e2b23202a804627a5c115738222701&q=${InpValue}&days=3&aqi=no&alerts=no`);
     setPress(true);
+    setTown(InpValue.slice(0, 1).toUpperCase() + InpValue.slice(1));
     setValue('')
   }
   return (
@@ -62,7 +63,7 @@ const Weather: React.FC = (): EmotionJSX.Element => {
           </Button>
         </Box>
       </form>
-      {/* {press && <WeatherData apiURL={url} />} */}
+      {press && <WeatherData apiURL={url} townName={town} />}
       <span>
         {'Powered by '}
         <Link

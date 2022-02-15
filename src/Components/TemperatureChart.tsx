@@ -3,9 +3,25 @@ import React from "react";
 import { MONTH_S } from "../Data/Consts";
 import { Chart as ChartJS } from 'chart.js/auto';
 import { Line } from 'react-chartjs-2';
-import { TData, TLoading } from '../Data/Types';
+import { TLoading } from '../Data/Types';
 import { EmotionJSX } from "@emotion/react/types/jsx-namespace";
-
+type TData = {
+  data: {
+    date: string,
+    day: {
+      maxtemp_c: number,
+      mintemp_c: number,
+      avgtemp_c: number,
+      maxwind_kph: number,
+      daily_chance_of_rain: number,
+      daily_chance_of_snow: number,
+      condition: {
+        text: string,
+        icon: string
+      }
+    }
+  }[]
+}
 const TemperatureChart: React.FC<TLoading & TData> = ({ loading, data }): EmotionJSX.Element => {
 
   const [chartData, setData] = React.useState({
@@ -21,6 +37,7 @@ const TemperatureChart: React.FC<TLoading & TData> = ({ loading, data }): Emotio
         backgroundColor: 'rgba(222, 99, 132, 0.2)',
         borderColor: 'rgba(255, 99, 132, 1)',
         borderWidth: 2,
+        tension: 0.3
       },
       {
         label: 'avg t, °C',
@@ -30,6 +47,8 @@ const TemperatureChart: React.FC<TLoading & TData> = ({ loading, data }): Emotio
         backgroundColor: 'rgba(48, 207, 113,0.2)',
         borderColor: 'rgba(48, 207, 113,1)',
         borderWidth: 2,
+        tension: 0.3
+
       },
       {
         label: 'min t, °C',
@@ -39,6 +58,7 @@ const TemperatureChart: React.FC<TLoading & TData> = ({ loading, data }): Emotio
         backgroundColor: 'rgba(1, 99, 132, 0.2)',
         borderColor: 'rgba(1, 99, 132, 1)',
         borderWidth: 2,
+        tension: 0.3
       },
     ],
   });
