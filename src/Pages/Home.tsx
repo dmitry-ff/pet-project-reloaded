@@ -4,7 +4,6 @@ import styled
   from '@emotion/styled';
 import dog from '../Images/dog.svg'
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
-import WithMaterialUI from '../Components/Charts/Valid';
 
 const CenteredHeader = styled.div`
 display: flex;
@@ -57,7 +56,6 @@ const Home: React.FC = (): EmotionJSX.Element => {
       <CenteredHeader>
         <h2 onClick={toggleModal}>Home</h2>
       </CenteredHeader>
-      <WithMaterialUI />
 
       {isOpen &&
         modalRoot ?

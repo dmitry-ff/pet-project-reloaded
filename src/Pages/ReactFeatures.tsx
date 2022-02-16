@@ -14,6 +14,7 @@ const CeneteredComp = styled.div`
 type TProps = {
   onClick: () => void;
 }
+
 const ForwardRef = forwardRef((props: TProps, ref: React.Ref<HTMLDivElement>) => {
   const { onClick } = props;
   return (
@@ -28,6 +29,7 @@ function createUser(name: string, surname: string): { name: string, surname: str
 }
 
 const ReactFeatures: React.FC = (): EmotionJSX.Element => {
+
   const ref = React.useRef<HTMLDivElement>(null);
   const [message, setMessage] = React.useState<string>('Hello');
   const [count, setCount] = React.useState<number>(0);

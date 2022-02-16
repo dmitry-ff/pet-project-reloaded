@@ -20,7 +20,7 @@ import Weather from './Pages/Weather';
 import ReactFeatures from './Pages/ReactFeatures';
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
-
+const myContext = React.createContext(true)
 
 const StyledComp = styled.div`
     display:inline-block;
