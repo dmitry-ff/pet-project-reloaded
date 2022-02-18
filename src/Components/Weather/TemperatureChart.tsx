@@ -1,8 +1,8 @@
 import _ from "lodash";
 import React from "react";
-import { MONTH_S } from "../Data/Consts";
+import { MONTH_S } from "../../Data/Consts";
 import { Line } from 'react-chartjs-2';
-import { TLoading } from '../Data/Types';
+import { TLoading } from '../../Data/Types';
 import { EmotionJSX } from "@emotion/react/types/jsx-namespace";
 type TData = {
   data: {

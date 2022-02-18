@@ -1,8 +1,8 @@
 import _ from 'lodash';
 import React from 'react';
-import { WEEK_S } from '../Data/Consts'
-import { WeatherData, WeatherToday, FirstColumn, SecondColumn, FourthColumn, WeatherWeek, WeatherCard } from '../Style/Weather'
-import { TLoading } from '../Data/Types'
+import { WEEK_S } from '../../Data/Consts'
+import { WeatherData, WeatherToday, FirstColumn, SecondColumn, FourthColumn, WeatherWeek, WeatherCard } from '../../Style/Weather'
+import { TLoading } from '../../Data/Types'
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 type THead = {
   nameHead: string;

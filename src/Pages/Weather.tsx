@@ -1,5 +1,5 @@
 import React from 'react';
-import WeatherData from '../Components/WeatherData'
+import WeatherData from '../Components/Weather/WeatherGetData'
 import { Button, Box, Link, TextField } from '@mui/material';
 import styled from '@emotion/styled';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';

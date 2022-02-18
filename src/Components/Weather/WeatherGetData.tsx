@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import Weather from './Weather';
+import Weather from './WeatherBlock';
 import TemperatureChart from './TemperatureChart';
 import { CircularProgress, Box } from '@mui/material';
-import { TResponse, TData, TContext } from '../Data/Types';
-import { Context } from '../Context'
+import { TResponse, TData, TContext } from '../../Data/Types';
+import { Context } from '../../Context'
 
 type TProps = {
   apiURL: string;
@@ -18,23 +18,28 @@ function WeatherData(props: TProps) {
   const { apiURL, townName } = props;
   const [context, setContext] = React.useContext(Context) as TContext;
 
+  axios.interceptors.response.use(response => {
+    return response
+  }, (error) => {
+    setContext(context ? !context : context);
+
+  }
+  )
+
   React.useEffect(() => {
     setLoading(true);
-
-    const source = axios.CancelToken.source();
-    axios.get<TResponse>(apiURL, { cancelToken: source.token })
+    axios.get<TResponse>(apiURL)
       .then(res => {
         let items = res.data;
         setData(data => [...items.forecast.forecastday])
         setTimeout(() => setLoading(false), 1000)
         return res;
       })
-
       .catch(error => {
-        setContext(context => !context)
-        console.error();
+
+
       })
-  }, [apiURL, setContext]);
+  }, [apiURL]);
   if (!context) { return null };
   return (
     <>
