@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import WeatherData from '../Components/WeatherData'
 import { Button, Box, Link, TextField } from '@mui/material';
 import styled from '@emotion/styled';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 import { useFormik } from "formik";
-import * as Yup from 'yup';
-
+import { Context } from '../Context';
+import { TContext } from '../Data/Types';
 
 const Heading = styled.h2`
     margin-top:50px;
@@ -17,22 +17,22 @@ interface IFormik {
   searchField: string,
 }
 
+
 const Weather: React.FC = (): EmotionJSX.Element => {
+
   const [url, setUrl] = React.useState<string>('');
   const [press, setPress] = React.useState<boolean>(false);
   const [town, setTown] = React.useState<string>('')
-  const [value, setValue] = React.useState<string>('')
+  const [context, setContext] = React.useContext(Context) as TContext;
 
-
-  const validate = (values: IFormik) => {
+  const validate = (values: IFormik,) => {
     let errors = {} as IFormik;
     if (!values.searchField) {
       errors.searchField = 'Required'
     } else if
       (!/^([a-zа-яё]+)$/i.test(values.searchField)) {
-      errors.searchField = 'Incorrect entry'
+      errors.searchField = 'Incorrect Entry'
     }
-
     return errors;
   };
 
@@ -47,6 +47,7 @@ const Weather: React.FC = (): EmotionJSX.Element => {
       setPress(true);
       setTown(values.searchField.slice(0, 1).toUpperCase() + values.searchField.slice(1));
       resetForm();
+      setContext(true)
     }
   })
 
@@ -74,8 +75,8 @@ const Weather: React.FC = (): EmotionJSX.Element => {
             name='searchField'
             value={formik.values.searchField}
             onChange={formik.handleChange}
-            error={(formik.touched.searchField && Boolean(formik.errors.searchField))}
-            helperText={(formik.touched.searchField && formik.errors.searchField)}
+            error={(formik.touched.searchField && Boolean(formik.errors.searchField)) || (!context)}
+            helperText={(formik.touched.searchField && formik.errors.searchField) || (!context && 'Incorrect Entry')}
 
           />
 

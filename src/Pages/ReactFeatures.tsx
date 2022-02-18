@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react'
 import styled from '@emotion/styled';
-import _ from 'lodash'
 import { Button } from '@mui/material';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 
@@ -30,13 +29,15 @@ function createUser(name: string, surname: string): { name: string, surname: str
 
 const ReactFeatures: React.FC = (): EmotionJSX.Element => {
 
+  const message: string = 'Hello';
   const ref = React.useRef<HTMLDivElement>(null);
-  const [message, setMessage] = React.useState<string>('Hello');
   const [count, setCount] = React.useState<number>(0);
-  const [name, setName] = React.useState<string>('Dmitry');
-  const [surname, setSurname] = React.useState<string>('Kozlov');
+  const [userCreate, setUser] = React.useState({
+    name: 'Dmitry',
+    surname: 'Kozlov'
+  });
 
-  const user = React.useMemo(() => { createUser(name, surname) }, [name, surname])
+  const user = React.useMemo(() => { createUser(userCreate.name, userCreate.surname) }, [userCreate])
 
   const sayHi = React.useCallback((text: string) => {
     console.log(text);

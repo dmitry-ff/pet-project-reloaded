@@ -27,7 +27,10 @@ export type TLoading = {
   loading: boolean;
 
 };
-
+export type TContext = [
+  context: boolean,
+  setContext: React.Dispatch<React.SetStateAction<boolean>>,
+];
 export type TData = {
   date: string,
   day: {

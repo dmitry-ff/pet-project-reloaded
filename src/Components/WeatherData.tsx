@@ -1,20 +1,23 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import axios from 'axios';
-import _ from 'lodash';
 import Weather from './Weather';
 import TemperatureChart from './TemperatureChart';
 import { CircularProgress, Box } from '@mui/material';
-import { TResponse, TData } from '../Data/Types'
+import { TResponse, TData, TContext } from '../Data/Types';
+import { Context } from '../Context'
 
 type TProps = {
   apiURL: string;
   townName: string;
 }
 
+
 function WeatherData(props: TProps) {
   const [data, setData] = React.useState<TData[]>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
   const { apiURL, townName } = props;
+  const [context, setContext] = React.useContext(Context) as TContext;
+
   React.useEffect(() => {
     setLoading(true);
 
@@ -28,17 +31,19 @@ function WeatherData(props: TProps) {
       })
 
       .catch(error => {
+        setContext(context => !context)
         console.error();
       })
-    return (() => { })
-  }, [apiURL]);
-
+  }, [apiURL, setContext]);
+  if (!context) { return null };
   return (
     <>
       {loading &&
         <Box sx={{ display: 'flex' }}>
           <CircularProgress />
-        </Box>}
+        </Box>
+      }
+
       {!loading
         &&
         <div>
