@@ -4,6 +4,7 @@ import { CHART_NAMES } from '../Data/Consts'
 import _ from 'lodash';
 import { NavLink, Outlet } from 'react-router-dom';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
+
 const ChartsNav = styled.div`
     width:fit-content;
     display: inline-block;

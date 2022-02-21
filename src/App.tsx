@@ -51,7 +51,7 @@ function App() {
 
         </Route>
         <Route path='Weather' element={
-          <Context.Provider value={[context, setContext]}>
+          <Context.Provider value={{ context, setContext }}>
             <Weather />
           </Context.Provider>}
         />

@@ -62,8 +62,9 @@ const TemperatureChart: React.FC<TLoading & TData> = ({ loading, data }): Emotio
     ],
   });
 
-  return <>{!loading && <Line data={chartData} />
-  }</>
+  return <>
+    {!loading && <Line data={chartData} />}
+  </>
 }
 
 export default TemperatureChart;

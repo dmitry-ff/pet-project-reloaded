@@ -12,11 +12,11 @@ type TProps = {
 }
 
 
-function WeatherData(props: TProps) {
+function WeatherData({ apiURL, townName }: TProps) {
+
   const [data, setData] = React.useState<TData[]>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
-  const { apiURL, townName } = props;
-  const [context, setContext] = React.useContext(Context) as TContext;
+  const { context, setContext } = React.useContext(Context) as TContext;
 
   axios.interceptors.response.use(response => {
     return response
@@ -35,10 +35,8 @@ function WeatherData(props: TProps) {
         setTimeout(() => setLoading(false), 1000)
         return res;
       })
-      .catch(error => {
+      .catch(error => { })
 
-
-      })
   }, [apiURL]);
   if (!context) { return null };
   return (
@@ -60,7 +58,6 @@ function WeatherData(props: TProps) {
     </>
   )
 };
-
 
 export default WeatherData;
 // export { }

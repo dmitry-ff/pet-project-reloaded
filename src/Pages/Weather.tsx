@@ -23,7 +23,7 @@ const Weather: React.FC = (): EmotionJSX.Element => {
   const [url, setUrl] = React.useState<string>('');
   const [press, setPress] = React.useState<boolean>(false);
   const [town, setTown] = React.useState<string>('')
-  const [context, setContext] = React.useContext(Context) as TContext;
+  const { context, setContext } = React.useContext(Context) as TContext;
 
   const validate = (values: IFormik,) => {
     let errors = {} as IFormik;
@@ -41,6 +41,7 @@ const Weather: React.FC = (): EmotionJSX.Element => {
       searchField: '',
     },
     validate,
+
     onSubmit: (values, { resetForm }) => {
       setUrl(url => url =
         `http://api.weatherapi.com/v1/forecast.json?key=3e2b23202a804627a5c115738222701&q=${formik.values.searchField}&days=3&aqi=no&alerts=no`);
@@ -58,7 +59,7 @@ const Weather: React.FC = (): EmotionJSX.Element => {
       alignItems: 'center',
       width: "100%",
     }} >
-      <Heading>Where do you whant to check wheather?</Heading>
+      <Heading>Where do you whant to check weather?</Heading>
       <form onSubmit={formik.handleSubmit}>
         <Box sx={{
           width: '40em',
