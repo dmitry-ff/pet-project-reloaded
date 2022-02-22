@@ -1,8 +1,8 @@
 import _ from 'lodash';
 import React from 'react';
-import { WEEK_S } from '../../Data/Consts'
+import { WEEK_S } from "../../Data/Consts/WEEK_S";
 import { WeatherData, WeatherToday, FirstColumn, SecondColumn, FourthColumn, WeatherWeek, WeatherCard } from '../../Style/Weather'
-import { TLoading } from '../../Data/Types'
+import { TLoading } from "../../Data/Types/TLoading";
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 type THead = {
   nameHead: string;
@@ -25,7 +25,7 @@ type TData = {
   }[]
 }
 
-const Weather: React.FC<TLoading & THead & TData> = ({ loading, nameHead, data }): EmotionJSX.Element => {
+const WeatherBlock: React.FC<TLoading & THead & TData> = ({ loading, nameHead, data }): EmotionJSX.Element => {
 
   return <>
     {!loading &&
@@ -83,5 +83,5 @@ const Weather: React.FC<TLoading & THead & TData> = ({ loading, nameHead, data }
 
 }
 
-export default Weather;
+export default WeatherBlock;
 // export { }

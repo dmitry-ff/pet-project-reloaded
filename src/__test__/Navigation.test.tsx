@@ -1,14 +1,17 @@
 import { HTMLAttributes, shallow, ShallowWrapper } from 'enzyme';
 import React from 'react';
-import Navigation from '../Components/Navigation';
+import Navigation from '../Components/Navigation/Navigation';
 
 const setUp = () => shallow(<Navigation />)
 
 describe('shoud render Navigation component', () => {
+
   let component: ShallowWrapper<HTMLAttributes, any, React.Component<{}, {}, any>>;
+
   beforeEach(() => {
     component = setUp()
   });
+
   it('shoud contain two styled div elements', () => {
     const wrapper = component.find('Styled(div)');
     expect(wrapper.length).toBe(2);

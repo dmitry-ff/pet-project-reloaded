@@ -1,8 +1,8 @@
 import _ from "lodash";
 import React from "react";
-import { MONTH_S } from "../../Data/Consts";
+import { MONTH_S } from "../../Data/Consts/MONTH_S";
 import { Line } from 'react-chartjs-2';
-import { TLoading } from '../../Data/Types';
+import { TLoading } from "../../Data/Types/TLoading";
 import { EmotionJSX } from "@emotion/react/types/jsx-namespace";
 type TData = {
   data: {
@@ -64,6 +64,7 @@ const TemperatureChart: React.FC<TLoading & TData> = ({ loading, data }): Emotio
 
   return <>
     {!loading && <Line data={chartData} />}
+
   </>
 }
 

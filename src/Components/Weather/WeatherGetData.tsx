@@ -3,7 +3,9 @@ import axios from 'axios';
 import Weather from './WeatherBlock';
 import TemperatureChart from './TemperatureChart';
 import { CircularProgress, Box } from '@mui/material';
-import { TResponse, TData, TContext } from '../../Data/Types';
+import { TResponse } from "../../Data/Types/TResponse";
+import { TData } from "../../Data/Types/TData";
+import { TContext } from "../../Data/Types/TContext";
 import { Context } from '../../Context'
 
 type TProps = {

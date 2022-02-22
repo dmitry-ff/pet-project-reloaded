@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 import { useFormik } from "formik";
 import { Context } from '../Context';
-import { TContext } from '../Data/Types';
+import { TContext } from "../Data/Types/TContext";
 
 const Heading = styled.h2`
     margin-top:50px;

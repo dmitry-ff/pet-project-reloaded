@@ -1,40 +1,37 @@
-import { render, shallow } from "enzyme"
-import { TData } from "../Data/Types"
-import TemperatureChart from '../Components/Weather/TemperatureChart'
+import { mount, shallow } from "enzyme";
+import renderer from 'react-test-renderer';
+import TemperatureChart from "../Components/Weather/TemperatureChart";
+import { TData } from "../Data/Types/TData";
 
-type TProps = {
-  loading: boolean,
-  data: TData[]
-};
+const data = [
+  {
+    date: '2021-01-01',
+    day: {
+      maxtemp_c: 1,
+      mintemp_c: 1,
+      avgtemp_c: 1,
+      maxwind_kph: 1,
+      daily_chance_of_rain: 1,
+      daily_chance_of_snow: 1,
+      condition: {
+        text: '',
+        icon: '',
+      },
+    },
+  }
+]
 
-
-const props = {
-  loading: true,
-  data: [
-    {
-      date: '2022-02-21',
-      day: {
-        maxtemp_c: 11,
-        mintemp_c: 11,
-        avgtemp_c: 11,
-        maxwind_kph: 11,
-        daily_chance_of_rain: 11,
-        daily_chance_of_snow: 11,
-        condition: {
-          text: 'asdasdasd',
-          icon: 'asdasdasd',
-        }
-      }
-    }
-  ]
-};
-//const setUp = (props: TProps) => render(<TemperatureChart {...props} />)
-
-it('should render component', () => {
-
-  // const view = setUp(props);
-  const view = render(<TemperatureChart {...props} />)
-
+describe('Temperature chart component', () => {
+  it('should render canvas element with empty data array', () => {
+    const tree = renderer
+      .create(<TemperatureChart loading={false} data={[]} />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render canvas element with data array', () => {
+    const tree = renderer
+      .create(<TemperatureChart loading={false} data={data} />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  })
 })
-
-export { }

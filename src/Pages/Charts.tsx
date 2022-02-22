@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { CHART_NAMES } from '../Data/Consts'
+import { CHART_NAMES } from "../Data/Consts/CHART_NAMES";
 import _ from 'lodash';
 import { NavLink, Outlet } from 'react-router-dom';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';

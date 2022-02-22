@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherBlock component should render component with data array 1`] = `
+<div
+  className="css-foywk1"
+>
+  <span>
+    Weather in 
+    <b>
+      Tula
+    </b>
+  </span>
+  <div
+    className="css-r06wbh"
+  >
+    <div
+      className="css-1d01znx"
+    >
+      <span>
+        +1
+        °
+      </span>
+      <img
+        alt="sunny"
+        src="icon.png"
+      />
+    </div>
+    <div
+      className="css-1q8vl9a"
+    >
+      <span>
+        sunny
+      </span>
+      <div>
+        <span>
+          max 
+          <b>
+            +1
+          </b>
+        </span>
+        <span>
+          min 
+          <b>
+            +1
+          </b>
+        </span>
+      </div>
+    </div>
+    <div>
+      <span>
+        Wind speed  
+        <b>
+          0.3
+           m/s
+        </b>
+      </span>
+    </div>
+    <div
+      className="css-o65e2m"
+    >
+      <span>
+        1
+         %
+      </span>
+      <span>
+        1
+         %
+      </span>
+    </div>
+  </div>
+  <div
+    className="css-1roh6vo"
+  >
+    <div>
+      <div>
+        Today
+      </div>
+      <div
+        className="css-17p9zak"
+      >
+        <div>
+          <span>
+            +1
+            °
+          </span>
+          <span>
+            +1
+            °
+          </span>
+        </div>
+        <img
+          alt="sunny"
+          src="icon.png"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

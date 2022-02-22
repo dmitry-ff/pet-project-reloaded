@@ -4,7 +4,7 @@ import {
   Route,
   Routes
 } from 'react-router-dom';
-import Navigation from './Components/Navigation';
+import Navigation from './Components/Navigation/Navigation';
 import Home from './Pages/Home'
 import Charts from './Pages/Charts';
 import styled from '@emotion/styled';
@@ -17,7 +17,6 @@ import Weather from './Pages/Weather';
 import ReactFeatures from './Pages/ReactFeatures';
 import { Chart, registerables } from 'chart.js';
 import { Context } from './Context';
-Chart.register(...registerables);
 
 const StyledComp = styled.div`
     display:inline-block;
