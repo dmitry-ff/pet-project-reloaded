@@ -15,3 +15,4 @@ describe('Charts component', () => {
     expect(wrapper.length).toBe(1);
   });
 })
+export { }

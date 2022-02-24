@@ -36,3 +36,4 @@ describe('WeatherBlock component', () => {
     expect(wrapper.length).toBe(7);
   })
 })
+export { }

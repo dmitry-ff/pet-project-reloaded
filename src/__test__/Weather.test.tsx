@@ -18,3 +18,4 @@ describe('Weather component', () => {
   });
 
 })
+export { }

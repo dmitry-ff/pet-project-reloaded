@@ -9,3 +9,4 @@ describe('LineChart component', () => {
     expect(wrapper.length).toBe(1);
   });
 });
+export { }

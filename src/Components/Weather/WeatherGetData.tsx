@@ -1,12 +1,12 @@
 import React from 'react';
 import axios from 'axios';
-import Weather from './WeatherBlock';
 import TemperatureChart from './TemperatureChart';
 import { CircularProgress, Box } from '@mui/material';
 import { TResponse } from "../../Data/Types/TResponse";
 import { TData } from "../../Data/Types/TData";
 import { TContext } from "../../Data/Types/TContext";
 import { Context } from '../../Context'
+import WeatherBlock from './WeatherBlock';
 
 type TProps = {
   apiURL: string;
@@ -14,7 +14,7 @@ type TProps = {
 }
 
 
-function WeatherData({ apiURL, townName }: TProps) {
+function WeatherGetData({ apiURL, townName }: TProps) {
 
   const [data, setData] = React.useState<TData[]>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
@@ -52,7 +52,7 @@ function WeatherData({ apiURL, townName }: TProps) {
       {!loading
         &&
         <div>
-          <Weather loading={loading} nameHead={townName} data={data} />
+          <WeatherBlock loading={loading} nameHead={townName} data={data} />
           <TemperatureChart loading={loading} data={data} />
         </div>
 
@@ -61,5 +61,5 @@ function WeatherData({ apiURL, townName }: TProps) {
   )
 };
 
-export default WeatherData;
+export default WeatherGetData;
 // export { }

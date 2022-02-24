@@ -35,3 +35,4 @@ describe('Temperature chart component', () => {
     expect(tree).toMatchSnapshot();
   })
 })
+export { }

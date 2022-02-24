@@ -38,3 +38,4 @@ describe('BarChart component', () => {
     expect(tree).toMatchSnapshot();
   })
 })
+export { }
