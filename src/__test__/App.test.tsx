@@ -14,4 +14,3 @@ describe('App component', () => {
     expect(wrapper.length).toEqual(1);
   })
 })
-export { }

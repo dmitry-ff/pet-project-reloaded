@@ -18,10 +18,9 @@ const Navigation: React.FC = (): EmotionJSX.Element => {
         <Navbar>
           <Link to='Charts'>Charts</Link>
           <Link to='Weather' >Weather</Link>
-          <Link to="reactfeatures">React Features</Link>
+          <Link to="ReactFeatures">React Features</Link>
         </Navbar>
       </NavigationDiv>
-      <Outlet />
     </>
   );
 }

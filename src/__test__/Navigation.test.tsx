@@ -35,5 +35,4 @@ describe('shoud render Navigation component', () => {
   })
 
 })
-export { }
 
