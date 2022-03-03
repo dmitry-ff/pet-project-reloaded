@@ -21,7 +21,7 @@ type TData = {
     }
   }[]
 }
-const TemperatureChart: React.FC<TLoading & TData> = ({ loading, data }): EmotionJSX.Element => {
+const TemperatureChart: React.FC<TLoading & TData> = ({ loading, data }): EmotionJSX.Element | null => {
 
   const [chartData, setData] = React.useState({
     labels: _.map(data, item => {
@@ -62,10 +62,9 @@ const TemperatureChart: React.FC<TLoading & TData> = ({ loading, data }): Emotio
     ],
   });
 
-  return <>
-    {!loading && <Line data={chartData} />}
+  if (loading) return null
 
-  </>
+  return <Line data={chartData} />
 }
 
 export default TemperatureChart;

@@ -59,7 +59,7 @@ const Weather: React.FC = (): EmotionJSX.Element => {
       alignItems: 'center',
       width: "100%",
     }} >
-      <Heading>Where do you whant to check weather?</Heading>
+      <Heading>Where do you want to check weather?</Heading>
       <form onSubmit={formik.handleSubmit}>
         <Box sx={{
           width: '40em',

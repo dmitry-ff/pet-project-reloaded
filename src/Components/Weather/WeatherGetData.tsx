@@ -7,59 +7,63 @@ import { TData } from "../../Data/Types/TData";
 import { TContext } from "../../Data/Types/TContext";
 import { Context } from '../../Context'
 import WeatherBlock from './WeatherBlock';
+import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
+import styled from '@emotion/styled';
 
 type TProps = {
   apiURL: string;
   townName: string;
 }
+const ErrorBlock = styled.div`
+  padding:10px 45px;
+  background-color:rgba(240, 15, 71,0.1);
+  border:1px solid rgb(246, 66, 95);
+  border-radius:10px;
+  margin-bottom:15px;
 
+`
 
-function WeatherGetData({ apiURL, townName }: TProps) {
+function WeatherGetData({ apiURL, townName }: TProps): EmotionJSX.Element {
 
   const [data, setData] = React.useState<TData[]>([]);
-  const [loading, setLoading] = React.useState<boolean>(true);
-  const { context, setContext } = React.useContext(Context) as TContext;
-
-  axios.interceptors.response.use(response => {
-    return response
-  }, (error) => {
-    setContext(context ? !context : context);
-
-  }
-  )
+  const [isLoading, setLoading] = React.useState<boolean>(true);
+  const [isError, setIsError] = React.useState<boolean>(false)
 
   React.useEffect(() => {
-    setLoading(true);
     axios.get<TResponse>(apiURL)
       .then(res => {
+        setLoading(true);
         let items = res.data;
         setData(data => [...items.forecast.forecastday])
-        setTimeout(() => setLoading(false), 1000)
-        return res;
+        setLoading(false);
+        setIsError(false);
+        return res
       })
-      .catch(error => { })
+      .catch(error => {
+        setLoading(false)
+        setIsError(true)
+        throw new Error(error)
+      })
+  }, [apiURL, isError]);
 
-  }, [apiURL]);
-  if (!context) { return null };
+  if (isLoading) {
+    return (
+      <Box sx={{ display: 'flex' }}>
+        <CircularProgress />
+      </Box>
+    )
+  }
+  if (isError && !isLoading) {
+    return <ErrorBlock>Неверное название города</ErrorBlock>
+  }
+
   return (
-    <>
-      {loading &&
-        <Box sx={{ display: 'flex' }}>
-          <CircularProgress />
-        </Box>
-      }
-
-      {!loading
-        &&
-        <div>
-          <WeatherBlock loading={loading} nameHead={townName} data={data} />
-          <TemperatureChart loading={loading} data={data} />
-        </div>
-
-      }
-    </>
+    <div>
+      <WeatherBlock loading={isLoading} nameHead={townName} data={data} />
+      <TemperatureChart loading={isLoading} data={data} />
+    </div>
   )
+
 };
 
 export default WeatherGetData;
-// export { }
