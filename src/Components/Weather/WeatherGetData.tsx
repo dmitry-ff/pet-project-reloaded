@@ -9,6 +9,8 @@ import { Context } from '../../Context'
 import WeatherBlock from './WeatherBlock';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 import styled from '@emotion/styled';
+import Chart from './CanvasChart/CanvasChart';
+import { Switch, FormControlLabel } from '@mui/material';
 
 type TProps = {
   apiURL: string;
@@ -22,12 +24,21 @@ const ErrorBlock = styled.div`
   margin-bottom:15px;
 
 `
+const SwitchDisplay = styled.div`
+display:flex;  
+justify-content:center;
+align-content:center;
+align-items:center;
+color:#7a7b7c;
+`
+
 
 function WeatherGetData({ apiURL, townName }: TProps): EmotionJSX.Element {
 
   const [data, setData] = React.useState<TData[]>([]);
   const [isLoading, setLoading] = React.useState<boolean>(true);
-  const [isError, setIsError] = React.useState<boolean>(false)
+  const [isError, setIsError] = React.useState<boolean>(false);
+  const [isSwitch, setIsSwitch] = React.useState<boolean>(true);
 
   React.useEffect(() => {
     axios.get<TResponse>(apiURL)
@@ -60,8 +71,15 @@ function WeatherGetData({ apiURL, townName }: TProps): EmotionJSX.Element {
   return (
     <div>
       <WeatherBlock loading={isLoading} nameHead={townName} data={data} />
-      <TemperatureChart loading={isLoading} data={data} />
-    </div>
+      <SwitchDisplay>
+        <span>Vanilla canvas</span>
+        <Switch defaultChecked onClick={() => { setIsSwitch(isSwitch => !isSwitch) }} />
+        <span>ChartJS</span>
+      </SwitchDisplay>
+      {isSwitch && <TemperatureChart loading={isLoading} data={data} />}
+      {!isSwitch && <Chart loading={isLoading} data={data} />}
+
+    </div >
   )
 
 };

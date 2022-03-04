@@ -26,9 +26,6 @@ type TData = {
 }
 
 const WeatherBlock: React.FC<TLoading & THead & TData> = ({ loading, nameHead, data }): EmotionJSX.Element | null => {
-  console.log(loading, 'LOADING')
-  console.log(data, 'DATA');
-
   if (!loading && isEmpty(data)) return null
 
   return (

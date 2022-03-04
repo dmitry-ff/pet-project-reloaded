@@ -30,7 +30,7 @@ const Weather: React.FC = (): EmotionJSX.Element => {
     if (!values.searchField) {
       errors.searchField = 'Required'
     } else if
-      (!/^([a-zа-яё]+)$/i.test(values.searchField)) {
+      (!/^([a-z\sа-яё]+)$/i.test(values.searchField)) {
       errors.searchField = 'Incorrect Entry'
     }
     return errors;
@@ -44,9 +44,9 @@ const Weather: React.FC = (): EmotionJSX.Element => {
 
     onSubmit: (values, { resetForm }) => {
       setUrl(url => url =
-        `http://api.weatherapi.com/v1/forecast.json?key=3e2b23202a804627a5c115738222701&q=${formik.values.searchField}&days=3&aqi=no&alerts=no`);
+        `http://api.weatherapi.com/v1/forecast.json?key=3e2b23202a804627a5c115738222701&q=${formik.values.searchField.trim()}&days=3&aqi=no&alerts=no`);
       setPress(true);
-      setTown(values.searchField.slice(0, 1).toUpperCase() + values.searchField.slice(1));
+      setTown(values.searchField.slice(0, 1).toUpperCase() + values.searchField.slice(1).toLowerCase());
       resetForm();
       setContext(true)
     }
