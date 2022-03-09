@@ -1,6 +1,6 @@
 import { Bar } from "react-chartjs-2";
-import ChartWrapper from "../../Style/ChartWrapper";
-import { TUserData } from "../../Data/Types/TUserData";
+import ChartWrapper from '../ChartWrapper'
+import { TUserData } from "../../../Data/Types/TUserData";
 
 import React from 'react'
 import { EmotionJSX } from "@emotion/react/types/jsx-namespace";

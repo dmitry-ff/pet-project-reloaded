@@ -2,7 +2,7 @@ import WeatherBlock from '../Components/Weather/WeatherBlock';
 import renderer from 'react-test-renderer';
 import { TData } from '../Data/Types/TData';
 import { shallow } from 'enzyme';
-import { FirstColumn } from '../Style/Weather';
+import { FirstColumn } from '../Style/WeatherStyle';
 import _ from 'lodash';
 const mockData = [
   {

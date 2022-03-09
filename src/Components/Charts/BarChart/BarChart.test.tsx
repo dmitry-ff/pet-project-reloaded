@@ -1,6 +1,6 @@
 import { shallow } from "enzyme";
 import _ from "lodash";
-import BarChart from "../Components/Charts/BarChart";
+import BarChart from "./BarChart";
 import renderer from 'react-test-renderer';
 
 // import { userData } from "../Data/Data";

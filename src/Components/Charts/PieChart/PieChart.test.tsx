@@ -1,6 +1,6 @@
 import { shallow } from "enzyme";
-import PieChart from "../Components/Charts/PieChart";
-import { userData } from "../Data/Data";
+import PieChart from "./PieChart";
+import { userData } from "../../../Data/Data";
 
 describe('PieChart component', () => {
   it('shoud render PieChart', () => {

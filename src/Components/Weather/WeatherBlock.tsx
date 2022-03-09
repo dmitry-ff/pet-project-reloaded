@@ -1,7 +1,7 @@
 import _, { isEmpty } from 'lodash';
 import React from 'react';
 import { WEEK_S } from "../../Data/Consts/WEEK_S";
-import { WeatherData, WeatherToday, FirstColumn, SecondColumn, FourthColumn, WeatherWeek, WeatherCard } from '../../Style/Weather'
+import { WeatherData, WeatherToday, FirstColumn, SecondColumn, FourthColumn, WeatherWeek, WeatherCard } from '../../Style/WeatherStyle'
 import { TLoading } from "../../Data/Types/TLoading";
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 type THead = {
