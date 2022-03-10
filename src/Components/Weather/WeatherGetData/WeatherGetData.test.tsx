@@ -1,8 +1,8 @@
 import { shallow } from "enzyme";
 import renderer from 'react-test-renderer';
 import { withHooks } from 'jest-react-hooks-shallow';
-import WeatherBlock from '../Components/Weather/WeatherBlock'
-import WeatherGetData from "../Components/Weather/WeatherGetData";
+import WeatherBlock from '../WeatherBlock/WeatherBlock'
+import WeatherGetData from "./WeatherGetData";
 const mockProps = {
   apiURL: 'http://api.weatherapi.com/v1/forecast.json?key=3e2b23202a804627a5c115738222701&q=Tula&days=3&aqi=no&alerts=no',
   townName: 'Tula'

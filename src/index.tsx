@@ -4,7 +4,7 @@ import reportWebVitals from './reportWebVitals';
 import { Global, css } from '@emotion/react'
 
 import { Chart, registerables } from 'chart.js';
-import App from './App';
+import App from './App/App';
 Chart.register(...registerables);
 
 ReactDOM.render(

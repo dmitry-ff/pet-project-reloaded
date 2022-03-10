@@ -1,9 +1,7 @@
-import WeatherBlock from '../Components/Weather/WeatherBlock';
+import WeatherBlock from './WeatherBlock';
 import renderer from 'react-test-renderer';
-import { TData } from '../Data/Types/TData';
+import { TData } from '../../../Data/Types/TData';
 import { shallow } from 'enzyme';
-import { FirstColumn } from '../Style/WeatherStyle';
-import _ from 'lodash';
 const mockData = [
   {
     date: '2020-21-10',

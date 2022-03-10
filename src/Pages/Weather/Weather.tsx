@@ -1,22 +1,15 @@
 import React from 'react';
-import WeatherData from '../Components/Weather/WeatherGetData'
+import WeatherGetData from '../../Components/Weather/WeatherGetData/WeatherGetData'
 import { Button, Box, Link, TextField } from '@mui/material';
-import styled from '@emotion/styled';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 import { useFormik } from "formik";
-import { Context } from '../Context';
-import { TContext } from "../Data/Types/TContext";
+import { Context } from '../../Context';
+import { TContext } from "../../Data/Types/TContext";
+import { Heading } from './WeatherStyled'
 
-const Heading = styled.h2`
-    margin-top:50px;
-    font-size: 2.5em;
-    text-align: center;
-    color: rgb(66, 66, 66);
-`
 interface IFormik {
   searchField: string,
 }
-
 
 const Weather: React.FC = (): EmotionJSX.Element => {
 
@@ -93,7 +86,7 @@ const Weather: React.FC = (): EmotionJSX.Element => {
           </Button>
         </Box>
       </form>
-      {press && <WeatherData apiURL={url} townName={town} />}
+      {press && <WeatherGetData apiURL={url} townName={town} />}
       <span>
         {'Powered by '}
         <Link

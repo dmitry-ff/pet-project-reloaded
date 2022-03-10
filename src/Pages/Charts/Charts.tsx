@@ -1,24 +1,9 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import { CHART_NAMES } from "../Data/Consts/CHART_NAMES";
+import { CHART_NAMES } from "../../Data/Consts/CHART_NAMES";
 import _ from 'lodash';
 import { NavLink, Outlet } from 'react-router-dom';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
-
-const ChartsNav = styled.div`
-    width:fit-content;
-    display: inline-block;
-    vertical-align:top;
-    flex-direction: column;
-        &>a{
-        color: rgb(128, 122, 122);
-        width:120px;
-        padding: 10px 20px;
-        text-decoration: none;
-            &:hover{
-                background-color: rgba(238, 237, 237, 0.548);
-    };
-`;
+import { ChartsNav } from './ChartsStyled';
 
 const Charts: React.FC = (): EmotionJSX.Element => {
   return (

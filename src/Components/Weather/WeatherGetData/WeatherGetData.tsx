@@ -1,37 +1,20 @@
 import React from 'react';
 import axios from 'axios';
-import TemperatureChart from './TemperatureChart';
+import TemperatureChart from '../TemperatureChart/TemperatureChart';
 import { CircularProgress, Box } from '@mui/material';
-import { TResponse } from "../../Data/Types/TResponse";
-import { TData } from "../../Data/Types/TData";
-import { TContext } from "../../Data/Types/TContext";
-import { Context } from '../../Context'
-import WeatherBlock from './WeatherBlock';
+import { TResponse } from "../../../Data/Types/TResponse";
+import { TData } from "../../../Data/Types/TData";
+
+import WeatherBlock from '../WeatherBlock/WeatherBlock';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
-import styled from '@emotion/styled';
-import Chart from './CanvasChart/CanvasChart';
-import { Switch, FormControlLabel } from '@mui/material';
+import Chart from '../CanvasChart/CanvasChart';
+import { Switch } from '@mui/material';
+import { ErrorBlock, SwitchDisplay } from './WeatherGetDataStyled';
 
 type TProps = {
   apiURL: string;
   townName: string;
 }
-const ErrorBlock = styled.div`
-  padding:10px 45px;
-  background-color:rgba(240, 15, 71,0.1);
-  border:1px solid rgb(246, 66, 95);
-  border-radius:10px;
-  margin-bottom:15px;
-
-`
-const SwitchDisplay = styled.div`
-display:flex;  
-justify-content:center;
-align-content:center;
-align-items:center;
-color:#7a7b7c;
-`
-
 
 function WeatherGetData({ apiURL, townName }: TProps): EmotionJSX.Element {
 

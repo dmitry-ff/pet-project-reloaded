@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom';
-import { NavigationDiv, Logo, Navbar } from './NavigationStyle';
+import { Link } from 'react-router-dom';
+import { NavigationDiv, Logo, Navbar } from './NavigationStyled';
 import dog from '../../Images/dog.svg';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 

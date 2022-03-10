@@ -1,6 +1,6 @@
 import { HTMLAttributes, shallow, ShallowWrapper } from 'enzyme';
 import React from 'react';
-import Navigation from '../Components/Navigation/Navigation';
+import Navigation from './Navigation';
 
 const setUp = () => shallow(<Navigation />)
 

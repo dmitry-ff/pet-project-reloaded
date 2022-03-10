@@ -1,15 +1,8 @@
 import React, { forwardRef } from 'react'
-import styled from '@emotion/styled';
 import { Button } from '@mui/material';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
+import { CeneteredComp } from './ReactFeaturesStyled';
 
-
-const CeneteredComp = styled.div`
-    height:90vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-`
 type TProps = {
   onClick: () => void;
 }

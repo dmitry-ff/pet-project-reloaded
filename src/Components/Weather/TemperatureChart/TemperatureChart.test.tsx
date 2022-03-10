@@ -1,7 +1,7 @@
 import { mount, shallow } from "enzyme";
 import renderer from 'react-test-renderer';
-import TemperatureChart from "../Components/Weather/TemperatureChart";
-import { TData } from "../Data/Types/TData";
+import TemperatureChart from "./TemperatureChart";
+import { TData } from "../../../Data/Types/TData";
 
 const data = [
   {

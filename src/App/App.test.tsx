@@ -1,5 +1,5 @@
 import { HTMLAttributes, shallow, ShallowWrapper } from "enzyme";
-import App from "../App";
+import App from "./App";
 
 const setUp = () => shallow(<App />)
 

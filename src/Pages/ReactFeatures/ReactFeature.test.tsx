@@ -1,5 +1,5 @@
 import { shallow } from "enzyme";
-import ReactFeatures from "../Pages/ReactFeatures";
+import ReactFeatures from "./ReactFeatures";
 
 
 describe('ReactFeatures component', () => {

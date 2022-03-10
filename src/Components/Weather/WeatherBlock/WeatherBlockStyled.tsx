@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import rain from '../Images/7795646_weather_cloud_rain_icon.svg';
-import snow from '../Images/8664916_snowflake_icon.svg';
+import rain from '../../../Images/7795646_weather_cloud_rain_icon.svg';
+import snow from '../../../Images/8664916_snowflake_icon.svg';
 export const WeatherData = styled.div`
     margin-bottom: 35px;
     border-radius: 10px;

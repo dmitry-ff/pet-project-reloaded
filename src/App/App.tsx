@@ -4,19 +4,19 @@ import {
   Route,
   Routes
 } from 'react-router-dom';
-import Navigation from './Components/Navigation/Navigation';
-import Home from './Pages/Home'
-import Charts from './Pages/Charts';
+import Navigation from '../Components/Navigation/Navigation';
+import Home from '../Pages/HomePage/Home'
+import Charts from '../Pages/Charts/Charts';
 import styled from '@emotion/styled';
-import PieChart from './Components/Charts/PieChart/PieChart';
-import DoughnutChart from './Components/Charts/DoughnutChart/DoughnutChart';
-import BarChart from './Components/Charts/BarChart/BarChart';
-import LineChart from './Components/Charts/LineChart/LineChart'
-import { userData, lineUserData } from './Data/Data';
-import Weather from './Pages/Weather';
-import ReactFeatures from './Pages/ReactFeatures';
+import PieChart from '../Components/Charts/PieChart/PieChart';
+import DoughnutChart from '../Components/Charts/DoughnutChart/DoughnutChart';
+import BarChart from '../Components/Charts/BarChart/BarChart';
+import LineChart from '../Components/Charts/LineChart/LineChart'
+import { userData, lineUserData } from '../Data/Data';
+import Weather from '../Pages/Weather/Weather';
+import ReactFeatures from '../Pages/ReactFeatures/ReactFeatures';
 import { Chart, registerables } from 'chart.js';
-import { Context } from './Context';
+import { Context } from '../Context';
 
 const StyledComp = styled.div`
     display:inline-block;

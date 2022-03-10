@@ -1,7 +1,6 @@
-
 import { HTMLAttributes, mount, render, shallow, ShallowWrapper } from 'enzyme';
 import React from 'react';
-import Charts from '../Pages/Charts';
+import Charts from './Charts';
 import { NavLink } from 'react-router-dom';
 
 const setUp = () => shallow(<Charts />)

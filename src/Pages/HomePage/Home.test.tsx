@@ -1,5 +1,5 @@
 import { shallow } from "enzyme";
-import Home from "../Pages/Home";
+import Home from "./Home";
 
 describe('Home component', () => {
   it('should render CenteredHeader component', () => {

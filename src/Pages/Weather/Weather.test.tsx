@@ -1,5 +1,5 @@
 import { shallow } from "enzyme";
-import Weather from "../Pages/Weather";
+import Weather from "./Weather";
 import renderer from 'react-test-renderer';
 
 describe('Weather component', () => {
