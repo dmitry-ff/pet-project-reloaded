@@ -1,6 +1,8 @@
 import _ from "lodash";
 import { marksCount } from "./marksCount";
-import { colors, marginX, TDataTemperature } from "./CanvasChart";
+import { COLORS } from '../data/initialData';
+import { SIZES } from '../data/Sizes';
+import { TDataTemperature } from '../types/TDataTemperature'
 type TCanvas = {
   (canvasRef: React.MutableRefObject<HTMLCanvasElement | null>,
     ctx: CanvasRenderingContext2D | null,
@@ -13,11 +15,11 @@ type TCanvas = {
   ): void
 }
 export const dotsDraw: TCanvas = (canvasRef, ctx, dataArr = [], colorIndex = 0, dates, stepX, stepY, dataTemperatures) => {
-  ctx!.fillStyle = `${colors[colorIndex]}`;
+  ctx!.fillStyle = `${COLORS[colorIndex]}`;
   for (let i = 0; i < dates.length; i++) {
     ctx!.beginPath();
     const dotY = _.indexOf(marksCount(dataTemperatures), dataArr[i]);
-    ctx!.arc(stepX * (i) + marginX + 20, dotY * stepY, 7, 0, Math.PI * 2);
+    ctx!.arc(stepX * (i) + SIZES.MARGIN_X + 20, dotY * stepY, 7, 0, Math.PI * 2);
     ctx!.fill();
   }
 };

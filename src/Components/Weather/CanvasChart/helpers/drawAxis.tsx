@@ -1,6 +1,6 @@
 import { xAxis } from "./xAxis";
 import { yAxis } from "./yAxis";
-import { TDataTemperature } from "./CanvasChart";
+import { TDataTemperature } from "../types/TDataTemperature";
 
 type TCanvas = {
   (canvasRef: React.MutableRefObject<HTMLCanvasElement | null>,

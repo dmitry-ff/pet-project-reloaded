@@ -1,0 +1,11 @@
+
+
+export enum SIZES {
+  PADDING = 40,
+  WIDTH = 640,
+  HEIGHT = 320,
+  DPI_WIDTH = WIDTH * 2,
+  DPI_HEIGTH = HEIGHT + 2,
+  VIEW_HEIGHT = DPI_HEIGTH - PADDING * 2,
+  MARGIN_X = 30,
+}

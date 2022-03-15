@@ -1,6 +1,6 @@
-import { TDataTemperature } from "./CanvasChart";
+import { TDataTemperature } from "../types/TDataTemperature";
 import { dotsDraw } from './dotsDraw';
-import { linesDraw } from './linesDraw';
+import { linesDraw } from './drawLines';
 
 type TCanvas = {
   (canvasRef: React.MutableRefObject<HTMLCanvasElement | null>,
@@ -8,7 +8,8 @@ type TCanvas = {
     stepX: number,
     stepY: number,
     dataTemperatures: TDataTemperature,
-    dates: string[]): void;
+    dates: string[]
+  ): void;
 }
 export const chartsDraw: TCanvas = (canvasRef, ctx, stepX, stepY, dataTemperatures, dates) => {
   let k = 0;
