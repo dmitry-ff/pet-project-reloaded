@@ -3,12 +3,12 @@ import { CHART_NAMES } from "../../Data/Consts/CHART_NAMES";
 import _ from 'lodash';
 import { NavLink, Outlet } from 'react-router-dom';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
-import { ChartsNav } from './ChartsStyled';
+import * as Styled from './Charts.styled';
 
 const Charts: React.FC = (): EmotionJSX.Element => {
   return (
     <>
-      <ChartsNav>
+      <Styled.ChartsNav>
         {
           _.map(CHART_NAMES, (item, index) => <NavLink
             style={({ isActive }) => ({
@@ -19,7 +19,7 @@ const Charts: React.FC = (): EmotionJSX.Element => {
             key={index}
             to={item}>{item}</NavLink>)
         }
-      </ChartsNav>
+      </Styled.ChartsNav>
       <Outlet />
     </>
   );

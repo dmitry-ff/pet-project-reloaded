@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import { Button } from '@mui/material';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
-import { CeneteredComp } from './ReactFeaturesStyled';
+import * as Styled from './ReactFeatures.styled';
 
 type TProps = {
   onClick: () => void;
@@ -44,7 +44,7 @@ const ReactFeatures: React.FC = (): EmotionJSX.Element => {
 
   return (
     <>
-      <CeneteredComp>
+      <Styled.CeneteredComp>
         <Button
           sx={{
             width: 'fit-content',
@@ -55,7 +55,7 @@ const ReactFeatures: React.FC = (): EmotionJSX.Element => {
           onClick={() => setCount(count => count + 1)}>{count}</Button>
         <ForwardRef onClick={() => console.log('Click')} ref={ref} />
 
-      </CeneteredComp>
+      </Styled.CeneteredComp>
     </>
   )
 }

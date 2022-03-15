@@ -9,7 +9,7 @@ import WeatherBlock from '../WeatherBlock/WeatherBlock';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 import Chart from '../CanvasChart/CanvasChart';
 import { Switch } from '@mui/material';
-import { ErrorBlock, SwitchDisplay } from './WeatherGetDataStyled';
+import * as Styled from './WeatherGetData.styled';
 
 type TProps = {
   apiURL: string;
@@ -48,17 +48,17 @@ function WeatherGetData({ apiURL, townName }: TProps): EmotionJSX.Element {
     )
   }
   if (isError && !isLoading) {
-    return <ErrorBlock>Неверное название города</ErrorBlock>
+    return <Styled.ErrorBlock>Неверное название города</Styled.ErrorBlock>
   }
 
   return (
     <div>
       <WeatherBlock loading={isLoading} nameHead={townName} data={data} />
-      <SwitchDisplay>
+      <Styled.SwitchDisplay>
         <span>Vanilla canvas</span>
         <Switch defaultChecked onClick={() => { setIsSwitch(isSwitch => !isSwitch) }} />
         <span>ChartJS</span>
-      </SwitchDisplay>
+      </Styled.SwitchDisplay>
       {isSwitch && <TemperatureChart loading={isLoading} data={data} />}
       {!isSwitch && <Chart loading={isLoading} data={data} />}
 

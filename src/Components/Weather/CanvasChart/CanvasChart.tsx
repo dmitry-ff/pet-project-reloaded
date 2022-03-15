@@ -16,6 +16,7 @@ const HEIGHT: number = 320;
 export const DPI_WIDTH = WIDTH * 2;
 export const DPI_HEIGTH = HEIGHT * 2;
 const VIEW_HEIGHT = DPI_HEIGTH - PADDING * 2
+
 const Card = styled.div`
   display:flex;
   justify-content:center;
@@ -63,7 +64,7 @@ export type TCanvas = {
 export const marginX: number = 30;
 export const colors: string[] = ['rgba(1, 99, 132, 1)', 'rgba(255, 99, 132, 1)', 'rgba(48, 207, 113,1)',];//max,min,avg
 export const tags: string[] = ['Min t, °C', 'Max t, °C', 'Avg t, °C']
-export const dot: { start: number | undefined, end: number | undefined } = {
+export const dot: { start: number | undefined, end?: number } = {
   start: undefined,
   end: undefined,
 }

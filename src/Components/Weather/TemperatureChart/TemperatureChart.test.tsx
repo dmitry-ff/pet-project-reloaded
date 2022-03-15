@@ -21,17 +21,17 @@ const data = [
   }
 ]
 
-describe('Temperature chart component', () => {
-  it('should render canvas element with empty data array', () => {
-    const tree = renderer
-      .create(<TemperatureChart loading={false} data={[]} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-  it('should render canvas element with data array', () => {
-    const tree = renderer
-      .create(<TemperatureChart loading={false} data={data} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  })
-})
+// describe('Temperature chart component', () => {
+//   it('should render canvas element with empty data array', () => {
+//     const tree = renderer
+//       .create(<TemperatureChart loading={false} data={[]} />)
+//       .toJSON();
+//     expect(tree).toMatchSnapshot();
+//   });
+//   it('should render canvas element with data array', () => {
+//     const tree = renderer
+//       .create(<TemperatureChart loading={false} data={data} />)
+//       .toJSON();
+//     expect(tree).toMatchSnapshot();
+//   })
+// })

@@ -1,5 +1,5 @@
 import { Bar } from "react-chartjs-2";
-import ChartWrapper from '../ChartWrapper'
+import * as Styled from '../ChartWrapper.styled'
 import { TUserData } from "../../../Data/Types/TUserData";
 
 import React from 'react'
@@ -7,9 +7,9 @@ import { EmotionJSX } from "@emotion/react/types/jsx-namespace";
 
 const BarChart: React.FC<TUserData> = ({ data }): EmotionJSX.Element => {
   return (
-    <ChartWrapper>
+    <Styled.ChartWrapper>
       <Bar data={data} />
-    </ChartWrapper>
+    </Styled.ChartWrapper>
   )
 }
 

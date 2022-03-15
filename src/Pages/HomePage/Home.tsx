@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import styled from '@emotion/styled';
 import dog from '../../Images/dog.svg'
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
-import { CenteredHeader, Portal } from './HomeStyled';
+import * as Styled from './Home.styled';
 
 interface IProps {
   children: JSX.Element[] | JSX.Element
@@ -11,9 +11,9 @@ interface IProps {
 
 const Modal: React.FC<IProps> = ({ children }) => {
   return (
-    <Portal>
+    <Styled.Portal>
       {children}
-    </Portal>
+    </Styled.Portal>
   )
 }
 
@@ -26,9 +26,9 @@ const Home: React.FC = (): EmotionJSX.Element => {
   const modalRoot = document.getElementById('modal-root');
   return (
     <>
-      <CenteredHeader>
+      <Styled.CenteredHeader>
         <h2 onClick={toggleModal}>Home</h2>
-      </CenteredHeader>
+      </Styled.CenteredHeader>
 
       {isOpen &&
         modalRoot ?

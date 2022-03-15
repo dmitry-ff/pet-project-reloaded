@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 
-const ChartWrapper = styled.div`
+export const ChartWrapper = styled.div`
 width:400px;
 display:inline-block;
 `
 
-export default ChartWrapper

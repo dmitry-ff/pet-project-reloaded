@@ -16,7 +16,6 @@ import { userData, lineUserData } from '../Data/Data';
 import Weather from '../Pages/Weather/Weather';
 import ReactFeatures from '../Pages/ReactFeatures/ReactFeatures';
 import { Chart, registerables } from 'chart.js';
-import { Context } from '../Context';
 
 const StyledComp = styled.div`
     display:inline-block;
@@ -50,10 +49,8 @@ function App() {
 
         </Route>
         <Route path='Weather' element={
-          <Context.Provider value={{ context, setContext }}>
-            <Weather />
-          </Context.Provider>}
-        />
+          <Weather />
+        } />
         <Route path='reactfeatures' element={<ReactFeatures />} />
         <Route
           path="*"
