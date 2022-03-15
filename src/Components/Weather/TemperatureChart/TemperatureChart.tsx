@@ -4,25 +4,7 @@ import { MONTH_S } from "../../../Data/Consts/MONTH_S";
 import { Line } from 'react-chartjs-2';
 import { TLoading } from "../../../Data/Types/TLoading";
 import { EmotionJSX } from "@emotion/react/types/jsx-namespace";
-import { TLineData } from '../../../Data/Types/TLineData'
-
-type TData = {
-  data: {
-    date: string,
-    day: {
-      maxtemp_c: number,
-      mintemp_c: number,
-      avgtemp_c: number,
-      maxwind_kph: number,
-      daily_chance_of_rain: number,
-      daily_chance_of_snow: number,
-      condition: {
-        text: string,
-        icon: string
-      }
-    }
-  }[]
-}
+import { TData } from "../types/TData";
 
 const TemperatureChart: React.FC<TLoading & TData> = ({ loading, data }): EmotionJSX.Element | null => {
 

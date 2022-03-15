@@ -1,5 +1,3 @@
-
-
 export enum SIZES {
   PADDING = 40,
   WIDTH = 640,

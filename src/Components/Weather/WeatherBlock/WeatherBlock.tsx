@@ -4,25 +4,9 @@ import { WEEK_S } from "../../../Data/Consts/WEEK_S";
 import * as Styled from './WeatherBlock.styled'
 import { TLoading } from "../../../Data/Types/TLoading";
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
+import { TData } from '../types/TData'
 type THead = {
   nameHead: string;
-}
-type TData = {
-  data: {
-    date: string,
-    day: {
-      maxtemp_c: number,
-      mintemp_c: number,
-      avgtemp_c: number,
-      maxwind_kph: number,
-      daily_chance_of_rain: number,
-      daily_chance_of_snow: number,
-      condition: {
-        text: string,
-        icon: string
-      }
-    }
-  }[]
 }
 
 const WeatherBlock: React.FC<TLoading & THead & TData> = ({ loading, nameHead, data }): EmotionJSX.Element | null => {
