@@ -4,8 +4,7 @@ import { WEEK_S } from "../data/WEEK_S";
 import * as Styled from './WeatherBlock.styled'
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 import { TData } from '../types/TData'
-import { TLoading } from '../types/TLoading';
-import { THead } from '../types/THead';
+
 
 
 const WeatherBlock = (props: { loading: boolean, nameHead: string, data: TData[] }): EmotionJSX.Element | null => {
