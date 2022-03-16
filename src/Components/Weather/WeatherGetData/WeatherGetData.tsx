@@ -2,21 +2,19 @@ import React from 'react';
 import axios from 'axios';
 import TemperatureChart from '../TemperatureChart/TemperatureChart';
 import { CircularProgress, Box } from '@mui/material';
-import { TResponse } from "../../../Data/Types/TResponse";
-import { TData } from "../../../Data/Types/TData";
-
+import { TResponse } from "../types/TResponse";
+import { TData } from "../types/TData";
 import WeatherBlock from '../WeatherBlock/WeatherBlock';
+
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 import Chart from '../CanvasChart/CanvasChart';
 import { Switch } from '@mui/material';
 import * as Styled from './WeatherGetData.styled';
+import { TWeatherGetData } from '../types/TWeatherGetData';
 
-type TProps = {
-  apiURL: string;
-  townName: string;
-}
 
-function WeatherGetData({ apiURL, townName }: TProps): EmotionJSX.Element {
+
+function WeatherGetData({ apiURL, townName }: TWeatherGetData): EmotionJSX.Element {
 
   const [data, setData] = React.useState<TData[]>([]);
   const [isLoading, setLoading] = React.useState<boolean>(true);
@@ -50,7 +48,6 @@ function WeatherGetData({ apiURL, townName }: TProps): EmotionJSX.Element {
   if (isError && !isLoading) {
     return <Styled.ErrorBlock>Неверное название города</Styled.ErrorBlock>
   }
-
   return (
     <div>
       <WeatherBlock loading={isLoading} nameHead={townName} data={data} />

@@ -1,17 +1,16 @@
 import _, { isEmpty } from 'lodash';
 import React from 'react';
-import { WEEK_S } from "../../../Data/Consts/WEEK_S";
+import { WEEK_S } from "../data/WEEK_S";
 import * as Styled from './WeatherBlock.styled'
-import { TLoading } from "../../../Data/Types/TLoading";
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 import { TData } from '../types/TData'
-type THead = {
-  nameHead: string;
-}
+import { TLoading } from '../types/TLoading';
+import { THead } from '../types/THead';
 
-const WeatherBlock: React.FC<TLoading & THead & TData> = ({ loading, nameHead, data }): EmotionJSX.Element | null => {
-  if (!loading && isEmpty(data)) return null
 
+const WeatherBlock = (props: { loading: boolean, nameHead: string, data: TData[] }): EmotionJSX.Element | null => {
+  const { loading, nameHead, data } = props;
+  if (!loading && isEmpty(data)) return null;
   return (
     <Styled.WeatherData>
       <span >

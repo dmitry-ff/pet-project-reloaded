@@ -1,17 +1,33 @@
-import _ from "lodash";
 import React, { useEffect } from "react";
-import { MONTH_S } from "../../../Data/Consts/MONTH_S";
-import { Line } from 'react-chartjs-2';
-import { TLoading } from "../../../Data/Types/TLoading";
 import { EmotionJSX } from "@emotion/react/types/jsx-namespace";
+import _ from "lodash";
+import { MONTH_S } from "../data/MONTH_S";
+import { Line } from 'react-chartjs-2';
+import { TLoading } from "../types/TLoading";
 import { TData } from "../types/TData";
+import { newLineData } from "../../Charts/LineChart/types/TLineData";
+type TT = {
+  date: string,
+  day: {
+    maxtemp_c: number,
+    mintemp_c: number,
+    avgtemp_c: number,
+    maxwind_kph: number,
+    daily_chance_of_rain: number,
+    daily_chance_of_snow: number,
+    condition: {
+      text: string,
+      icon: string
+    }
+  }
 
-const TemperatureChart: React.FC<TLoading & TData> = ({ loading, data }): EmotionJSX.Element | null => {
-
-  const [chartData, setData] = React.useState<any>();
-
+}
+const TemperatureChart = (props: { loading: boolean, data: TT[] }): EmotionJSX.Element | null => {
+  const [chartData, setData] = React.useState<newLineData>();
+  const { loading, data } = props;
   useEffect(() => {
     setData({
+
       labels: data.map((item) => `${MONTH_S[new Date(item.date).getMonth()]}, ${new Date(item.date).getDate()}`),
       datasets: [
         {
@@ -50,8 +66,10 @@ const TemperatureChart: React.FC<TLoading & TData> = ({ loading, data }): Emotio
   }, [data])
 
   if (loading) return null
-
-  return <Line data={chartData} />
+  if (chartData) {
+    return <Line data={chartData} />
+  }
+  return null;
 }
 
 export default TemperatureChart;

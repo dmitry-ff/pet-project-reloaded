@@ -1,5 +1,5 @@
 import * as Styled from "../ChartWrapper.styled";
-import { TLineData } from "../../../Data/Types/TLineData";
+import { TLineData } from "./types/TLineData";
 import { Line } from 'react-chartjs-2';
 import { EmotionJSX } from "@emotion/react/types/jsx-namespace";
 

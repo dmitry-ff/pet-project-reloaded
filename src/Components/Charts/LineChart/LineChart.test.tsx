@@ -1,6 +1,6 @@
 import { shallow } from "enzyme";
 import LineChart from "./LineChart";
-import { lineUserData } from "../../../Data/Data";
+import { lineUserData } from "../../../App/data/Data";
 
 describe('LineChart component', () => {
   it('shoud render LineChart', () => {

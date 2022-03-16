@@ -1,6 +1,6 @@
 import { Doughnut } from 'react-chartjs-2';
 import * as Styled from "../ChartWrapper.styled";
-import { TUserData } from "../../../Data/Types/TUserData";
+import { TUserData } from "../types/TUserData";
 import React from 'react';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 

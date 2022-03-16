@@ -2,8 +2,8 @@ export enum SIZES {
   PADDING = 40,
   WIDTH = 640,
   HEIGHT = 320,
-  DPI_WIDTH = WIDTH * 2,
-  DPI_HEIGTH = HEIGHT + 2,
-  VIEW_HEIGHT = DPI_HEIGTH - PADDING * 2,
   MARGIN_X = 30,
 }
+export const DPI_WIDTH = SIZES.WIDTH * 2;
+export const DPI_HEIGHT = SIZES.HEIGHT * 2;
+export const VIEW_HEIGHT = DPI_HEIGHT - SIZES.PADDING * 2;

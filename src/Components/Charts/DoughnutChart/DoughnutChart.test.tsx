@@ -1,6 +1,6 @@
 import { shallow } from "enzyme";
 import DoughnutChart from "./DoughnutChart";
-import { userData } from "../../../Data/Data";
+import { userData } from "../../../App/data/Data";
 
 describe('DoughnutChart component', () => {
   it('shoud render DoughnutChart', () => {

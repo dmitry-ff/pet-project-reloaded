@@ -3,16 +3,16 @@ import { marksCount } from "./helpers/marksCount";
 import { axisDraw } from "./helpers/drawAxis";
 import { chartsDraw } from "./helpers/drawCharts";
 import { chartLegend } from "./helpers/chartLegend";
-import { TLoading } from '../../../Data/Types/TLoading'
+import { TLoading } from '../types/TLoading'
 import { EmotionJSX } from "@emotion/react/types/jsx-namespace";
 import _ from "lodash";
-import { MONTH_S } from "../../../Data/Consts/MONTH_S";
-import { TData } from "./types/TData";
+import { MONTH_S } from "../data/MONTH_S";
+import { TData } from "../types/TData";
 import { TDataTemperature } from "./types/TDataTemperature";
 import * as Styled from './CanvasChart.styled'
-import { SIZES } from './data/Sizes'
-const Chart: React.FC<TLoading & TData> = ({ loading, data }): EmotionJSX.Element => {
-
+import { SIZES, DPI_WIDTH, DPI_HEIGHT, VIEW_HEIGHT } from './data/Sizes'
+const Chart = (props: { loading: boolean, data: TData[] }): EmotionJSX.Element => {
+  const { loading, data } = props;
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
   const canvasCtxRef = React.useRef<CanvasRenderingContext2D | null>(null)
 
@@ -22,8 +22,8 @@ const Chart: React.FC<TLoading & TData> = ({ loading, data }): EmotionJSX.Elemen
       const ctx = canvasCtxRef.current;
       canvasRef.current.style.width = SIZES.WIDTH + 'px';
       canvasRef.current.style.height = SIZES.HEIGHT + 'px';
-      canvasRef.current.height = SIZES.DPI_HEIGTH;
-      canvasRef.current.width = SIZES.DPI_WIDTH;
+      canvasRef.current.height = DPI_HEIGHT;
+      canvasRef.current.width = DPI_WIDTH;
       const dataTemperatures: TDataTemperature = {
         minT: _.map(data, item => {
           let temp = item.day.mintemp_c;
@@ -39,8 +39,8 @@ const Chart: React.FC<TLoading & TData> = ({ loading, data }): EmotionJSX.Elemen
       const dates: string[] = _.map(data, item => {
         return `${MONTH_S[new Date(item.date).getMonth()]}, ${new Date(item.date).getDate()}`
       })
-      const stepX: number = SIZES.DPI_WIDTH / dates.length + 185;
-      const stepY: number = SIZES.VIEW_HEIGHT / marksCount(dataTemperatures).length;//взять из даты
+      const stepX: number = DPI_WIDTH / dates.length + 185;
+      const stepY: number = VIEW_HEIGHT / marksCount(dataTemperatures).length;//взять из даты
 
       axisDraw(canvasRef, ctx, dates, stepX, stepY, dataTemperatures);
       chartsDraw(canvasRef, ctx, stepX, stepY, dataTemperatures, dates);

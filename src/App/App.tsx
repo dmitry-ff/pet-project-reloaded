@@ -12,7 +12,7 @@ import PieChart from '../Components/Charts/PieChart/PieChart';
 import DoughnutChart from '../Components/Charts/DoughnutChart/DoughnutChart';
 import BarChart from '../Components/Charts/BarChart/BarChart';
 import LineChart from '../Components/Charts/LineChart/LineChart'
-import { userData, lineUserData } from '../Data/Data';
+import { userData, lineUserData } from './data/Data';
 import Weather from '../Pages/Weather/Weather';
 import ReactFeatures from '../Pages/ReactFeatures/ReactFeatures';
 import { Chart, registerables } from 'chart.js';
@@ -32,7 +32,7 @@ function App() {
       <Routes>
         <Route path='/' element={
           <Home />
-        } >
+        }>
         </Route>
         <Route path='Charts' element={<Charts />} >
           <Route

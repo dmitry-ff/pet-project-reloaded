@@ -1,7 +1,7 @@
 import { mount, shallow } from "enzyme";
 import renderer from 'react-test-renderer';
 import TemperatureChart from "./TemperatureChart";
-import { TData } from "../../../Data/Types/TData";
+import { TData } from "../types/TData";
 
 const data = [
   {
@@ -21,7 +21,7 @@ const data = [
   }
 ]
 
-// describe('Temperature chart component', () => {
+// describe('Temperature chart component', () => {./types/TResponse
 //   it('should render canvas element with empty data array', () => {
 //     const tree = renderer
 //       .create(<TemperatureChart loading={false} data={[]} />)
