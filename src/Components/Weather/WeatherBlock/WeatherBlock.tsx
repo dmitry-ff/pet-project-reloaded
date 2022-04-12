@@ -1,5 +1,4 @@
 import _, { isEmpty } from 'lodash';
-import React from 'react';
 import { WEEK_S } from "../data/WEEK_S";
 import * as Styled from './WeatherBlock.styled'
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
@@ -10,6 +9,7 @@ import { TData } from '../types/TData'
 const WeatherBlock = (props: { loading: boolean, nameHead: string, data: TData[] }): EmotionJSX.Element | null => {
   const { loading, nameHead, data } = props;
   if (!loading && isEmpty(data)) return null;
+
   return (
     <Styled.WeatherData>
       <span >

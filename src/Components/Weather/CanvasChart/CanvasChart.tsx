@@ -3,7 +3,6 @@ import { marksCount } from "./helpers/marksCount";
 import { axisDraw } from "./helpers/drawAxis";
 import { chartsDraw } from "./helpers/drawCharts";
 import { chartLegend } from "./helpers/chartLegend";
-import { TLoading } from '../types/TLoading'
 import { EmotionJSX } from "@emotion/react/types/jsx-namespace";
 import _ from "lodash";
 import { MONTH_S } from "../data/MONTH_S";
@@ -11,10 +10,11 @@ import { TData } from "../types/TData";
 import { TDataTemperature } from "./types/TDataTemperature";
 import * as Styled from './CanvasChart.styled'
 import { SIZES, DPI_WIDTH, DPI_HEIGHT, VIEW_HEIGHT } from './data/Sizes'
+
 const Chart = (props: { loading: boolean, data: TData[] }): EmotionJSX.Element => {
   const { loading, data } = props;
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
-  const canvasCtxRef = React.useRef<CanvasRenderingContext2D | null>(null)
+  const canvasCtxRef = React.useRef<CanvasRenderingContext2D | null>(null);
 
   React.useEffect(() => {
     if (canvasRef.current) {
