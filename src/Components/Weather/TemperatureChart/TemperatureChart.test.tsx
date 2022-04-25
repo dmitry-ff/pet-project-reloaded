@@ -2,6 +2,9 @@ import { mount, shallow } from "enzyme";
 import renderer from 'react-test-renderer';
 import TemperatureChart from "./TemperatureChart";
 import { TData } from "../types/TData";
+import React from "react";
+import { lineUserData } from "../../../App/data/Data";
+lineUserData
 
 const data = [
   {
@@ -20,18 +23,19 @@ const data = [
     },
   }
 ]
+const props = {
+  isLoading: false,
+  data
+}
 
-// describe('Temperature chart component', () => {./types/TResponse
-//   it('should render canvas element with empty data array', () => {
-//     const tree = renderer
-//       .create(<TemperatureChart loading={false} data={[]} />)
-//       .toJSON();
-//     expect(tree).toMatchSnapshot();
-//   });
-//   it('should render canvas element with data array', () => {
-//     const tree = renderer
-//       .create(<TemperatureChart loading={false} data={data} />)
-//       .toJSON();
-//     expect(tree).toMatchSnapshot();
-//   })
-// })
+describe('Temperaturt chart', () => {
+  it('should return Box and CircularProgress', () => {
+    const wrapper = shallow(<TemperatureChart loading={false} data={data} />);
+    expect(wrapper.length).toBe(1)
+    console.log(wrapper.debug())
+  })
+  it('should return Box and CircularProgress', () => {
+    const wrapper = shallow(<TemperatureChart loading={true} data={data} />);
+    console.log(wrapper.debug())
+  })
+})

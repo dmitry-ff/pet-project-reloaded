@@ -1,6 +1,7 @@
 import { shallow } from "enzyme";
 import _ from "lodash";
 import BarChart from "./BarChart";
+import { Bar } from "react-chartjs-2";
 import renderer from 'react-test-renderer';
 
 // import { userData } from "../Data/Data";
@@ -25,16 +26,17 @@ const userData = {
 
   ]
 }
-describe('BarChart component', () => {
-  it('shoud render BarChart', () => {
-    const component = shallow(<BarChart data={userData} />)
+
+
+describe('DoughnutChart component', () => {
+  it('should render BarChart component', () => {
+    const component = shallow(<BarChart data={userData} />);
     const wrapper = component.find('Styled(div)');
     expect(wrapper.length).toBe(1);
-  });
-  it('Barchart snapshot', () => {
-    const tree = renderer
-      .create(<BarChart data={userData} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+  })
+  it('should render Bar chart', () => {
+    const component = shallow(<Bar data={userData} />);
+    const wrapper = component.find('ForwardRef(ChartComponent)');
+    expect(wrapper.length).toBe(1);
   })
 })

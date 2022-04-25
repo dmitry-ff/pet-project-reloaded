@@ -1,28 +1,11 @@
 import React, { useEffect } from "react";
 import { EmotionJSX } from "@emotion/react/types/jsx-namespace";
-import _ from "lodash";
 import { MONTH_S } from "../data/MONTH_S";
 import { Line } from 'react-chartjs-2';
-import { TLoading } from "../types/TLoading";
 import { TData } from "../types/TData";
 import { newLineData } from "../../Charts/LineChart/types/TLineData";
-type TT = {
-  date: string,
-  day: {
-    maxtemp_c: number,
-    mintemp_c: number,
-    avgtemp_c: number,
-    maxwind_kph: number,
-    daily_chance_of_rain: number,
-    daily_chance_of_snow: number,
-    condition: {
-      text: string,
-      icon: string
-    }
-  }
 
-}
-const TemperatureChart = (props: { loading: boolean, data: TT[] }): EmotionJSX.Element | null => {
+const TemperatureChart = (props: { loading: boolean, data: TData[] }): EmotionJSX.Element | null => {
   const [chartData, setData] = React.useState<newLineData>();
   const { loading, data } = props;
   useEffect(() => {
@@ -32,7 +15,7 @@ const TemperatureChart = (props: { loading: boolean, data: TT[] }): EmotionJSX.E
       datasets: [
         {
           label: 'max t, °C',
-          data: _.map(data, item => {
+          data: data.map(item => {
             return item.day.maxtemp_c;
           }),
           backgroundColor: 'rgba(222, 99, 132, 0.2)',
@@ -42,7 +25,7 @@ const TemperatureChart = (props: { loading: boolean, data: TT[] }): EmotionJSX.E
         },
         {
           label: 'avg t, °C',
-          data: _.map(data, item => {
+          data: data.map(item => {
             return (item.day.maxtemp_c + item.day.mintemp_c) / 2;
           }),
           backgroundColor: 'rgba(48, 207, 113,0.2)',
@@ -53,7 +36,7 @@ const TemperatureChart = (props: { loading: boolean, data: TT[] }): EmotionJSX.E
         },
         {
           label: 'min t, °C',
-          data: _.map(data, item => {
+          data: data.map(item => {
             return item.day.mintemp_c;
           }),
           backgroundColor: 'rgba(1, 99, 132, 0.2)',

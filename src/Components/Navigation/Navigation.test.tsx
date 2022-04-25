@@ -29,10 +29,6 @@ describe('shoud render Navigation component', () => {
     const wrapper = component.find('Link');
     expect(wrapper.length).toBe(4);
   })
-  it('shoud contain image element', () => {
-    const wrapper = component.find('img');
-    expect(wrapper.length).toBe(1);
-  })
 
 })
 

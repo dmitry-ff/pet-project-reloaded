@@ -1,11 +1,18 @@
 import { shallow } from "enzyme";
 import LineChart from "./LineChart";
 import { lineUserData } from "../../../App/data/Data";
+import { Line } from "react-chartjs-2";
 
 describe('LineChart component', () => {
-  it('shoud render LineChart', () => {
-    const componnet = shallow(<LineChart data={lineUserData} />)
-    const wrapper = componnet.find('Styled(div)');
+  it('should render BarChart component', () => {
+    const component = shallow(<LineChart data={lineUserData} />);
+    const wrapper = component.find('Styled(div)');
     expect(wrapper.length).toBe(1);
-  });
+  })
+  it('should render Bar chart', () => {
+    const component = shallow(<Line data={lineUserData} />);
+    const wrapper = component.find('ForwardRef(ChartComponent)');
+    expect(wrapper.length).toBe(1);
+  })
 });
+

@@ -26,6 +26,7 @@ describe('WeatherGetData', () => {
     const wrapper = shallow(<WeatherGetData {...mockProps} />);
     console.log(wrapper.debug());
   })
+
 })
 
 
