@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherBlock component should render component with data array 1`] = `null`;

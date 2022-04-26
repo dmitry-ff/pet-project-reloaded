@@ -4,7 +4,7 @@ import TemperatureChart from "./TemperatureChart";
 import { TData } from "../types/TData";
 import React from "react";
 import { lineUserData } from "../../../App/data/Data";
-lineUserData
+
 
 const data = [
   {
@@ -23,19 +23,16 @@ const data = [
     },
   }
 ]
-const props = {
-  isLoading: false,
-  data
-}
 
-describe('Temperaturt chart', () => {
-  it('should return Box and CircularProgress', () => {
-    const wrapper = shallow(<TemperatureChart loading={false} data={data} />);
-    expect(wrapper.length).toBe(1)
-    console.log(wrapper.debug())
+
+
+describe('Testing TemperatureChart component', () => {
+  it('Should return null if loading is true', () => {
+    const component = shallow(<TemperatureChart loading={true} data={[]} />)
+    expect(component.type()).toEqual(null)
   })
-  it('should return Box and CircularProgress', () => {
-    const wrapper = shallow(<TemperatureChart loading={true} data={data} />);
-    console.log(wrapper.debug())
+  it('Should return a Forward Ref to the Line chart', () => {
+    const initialState = null;
+    React.useState = jest.fn().mockImplementationOnce([initialState, {}])
   })
 })

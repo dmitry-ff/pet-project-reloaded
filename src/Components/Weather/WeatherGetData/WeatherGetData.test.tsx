@@ -13,21 +13,20 @@ type TProps = {
   townName: string
 }
 
-describe('WeatherGetData', () => {
-  it('should return Box and CircularProgress', () => {
-    const wrapper = shallow(<WeatherGetData {...mockProps} />);
-    expect(wrapper.find('ForwardRef(Box)')).toHaveLength(1);
-    expect(wrapper.find('ForwardRef(CircularProgress)')).toHaveLength(1);
-  })
-  it('should return ', () => {
-    const handleClick = jest.spyOn(React, "useState");
-    const setLoading = jest.fn() as unknown;
-    handleClick.mockImplementation((loading: unknown) => [loading = false, setLoading]);
-    const wrapper = shallow(<WeatherGetData {...mockProps} />);
-    console.log(wrapper.debug());
-  })
-
-})
+// describe('WeatherGetData', () => {
+//   it('should return Box and CircularProgress', () => {
+//     const wrapper = shallow(<WeatherGetData {...mockProps} />);
+//     expect(wrapper.find('ForwardRef(Box)')).toHaveLength(1);
+//     expect(wrapper.find('ForwardRef(CircularProgress)')).toHaveLength(1);
+//   })
+//   it('should return ', () => {
+//     const handleClick = jest.spyOn(React, "useState");
+//     const setLoading = jest.fn() as unknown;
+//     handleClick.mockImplementation((loading: unknown) => [loading = false, setLoading]);
+//     const wrapper = shallow(<WeatherGetData {...mockProps} />);
+//     console.log(wrapper.debug());
+//   })
+// })
 
 
 // const setUp = (props: TProps) => shallow(<WeatherGetData {...props} />)

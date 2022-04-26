@@ -6,7 +6,7 @@ import { TData } from "../types/TData";
 import { newLineData } from "../../Charts/LineChart/types/TLineData";
 
 const TemperatureChart = (props: { loading: boolean, data: TData[] }): EmotionJSX.Element | null => {
-  const [chartData, setData] = React.useState<newLineData>();
+  const [chartData, setData] = React.useState<newLineData | null>(null);
   const { loading, data } = props;
   useEffect(() => {
     setData({
@@ -48,8 +48,7 @@ const TemperatureChart = (props: { loading: boolean, data: TData[] }): EmotionJS
     })
   }, [data])
 
-  if (loading) return null
-  if (chartData) {
+  if (!loading && chartData) {
     return <Line data={chartData} />
   }
   return null;

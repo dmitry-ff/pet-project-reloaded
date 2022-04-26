@@ -24,7 +24,6 @@ const StyledComp = styled.div`
 `
 
 function App() {
-  const [context, setContext] = React.useState(true)
 
   return (
     <BrowserRouter>
