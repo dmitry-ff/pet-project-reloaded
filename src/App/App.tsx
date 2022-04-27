@@ -5,7 +5,7 @@ import {
   Routes
 } from 'react-router-dom';
 import Navigation from '../Components/Navigation/Navigation';
-import Home from '../Pages/HomePage/Home'
+import Home from '../Pages/HomePage/Home/Home'
 import Charts from '../Pages/Charts/Charts';
 import styled from '@emotion/styled';
 import PieChart from '../Components/Charts/PieChart/PieChart';
@@ -14,7 +14,7 @@ import BarChart from '../Components/Charts/BarChart/BarChart';
 import LineChart from '../Components/Charts/LineChart/LineChart'
 import { userData, lineUserData } from './data/Data';
 import Weather from '../Pages/Weather/Weather';
-import ReactFeatures from '../Pages/ReactFeatures/ReactFeatures';
+import ReactFeatures from '../Pages/ReactFeatures/Features';
 import { Chart, registerables } from 'chart.js';
 
 const StyledComp = styled.div`

@@ -15,10 +15,12 @@ type TCanvas = {
   ): void
 }
 export const dotsDraw: TCanvas = (canvasRef, ctx, dataArr = [], colorIndex = 0, dates, stepX, stepY, dataTemperatures) => {
+
   ctx!.fillStyle = `${COLORS[colorIndex]}`;
+
   for (let i = 0; i < dates.length; i++) {
     ctx!.beginPath();
-    const dotY = _.indexOf(marksCount(dataTemperatures), dataArr[i]);
+    const dotY = marksCount(dataTemperatures).indexOf(dataArr[i]);
     ctx!.arc(stepX * (i) + SIZES.MARGIN_X + 20, dotY * stepY, 7, 0, Math.PI * 2);
     ctx!.fill();
   }

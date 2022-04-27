@@ -1,23 +1,12 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import { Button } from '@mui/material';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
-import * as Styled from './ReactFeatures.styled';
+import * as Styled from './Features.styled';
+import { createUser } from '../utils/createUser';
+import { Forward } from '../Forward/Forward';
 
 type TProps = {
   onClick: () => void;
-}
-
-const ForwardRef = forwardRef((props: TProps, ref: React.Ref<HTMLDivElement>) => {
-  const { onClick } = props;
-  return (
-    <div ref={ref}></div>
-  )
-})
-
-function createUser(name: string, surname: string): { name: string, surname: string } {
-  const user = { name, surname };
-  console.log(user);
-  return user;
 }
 
 const ReactFeatures: React.FC = (): EmotionJSX.Element => {
@@ -36,7 +25,7 @@ const ReactFeatures: React.FC = (): EmotionJSX.Element => {
     console.log(text);
   }, []);
 
-
+  const handleClick = () => setCount(count => count + 1)
   React.useEffect(() => {
     sayHi(message);
     console.log(ref)
@@ -52,8 +41,11 @@ const ReactFeatures: React.FC = (): EmotionJSX.Element => {
           }}
           color='warning'
           variant="outlined"
-          onClick={() => setCount(count => count + 1)}>{count}</Button>
-        <ForwardRef onClick={() => console.log('Click')} ref={ref} />
+          onClick={handleClick}
+        >
+          {count}
+        </Button>
+        <Forward onClick={() => console.log('Click')} ref={ref} />
 
       </Styled.CeneteredComp>
     </>

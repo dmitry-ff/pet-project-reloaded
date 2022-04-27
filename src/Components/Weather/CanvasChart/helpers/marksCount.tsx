@@ -9,5 +9,5 @@ export function marksCount(dataTemperatures: TDataTemperature) {
     marksArr.push(i);
   }
 
-  return _.reverse(marksArr);
+  return marksArr.reverse();
 };

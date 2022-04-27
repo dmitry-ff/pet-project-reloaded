@@ -19,8 +19,8 @@ export const linesDraw: TCanvas = (canvasRef, ctx, dataArr = [], colorIndex = 0,
   ctx!.beginPath();
   ctx!.lineWidth = 5;
   for (let i = 0; i < dates.length - 1; i++) {
-    DOT.start = _.indexOf(marksCount(dataTemperatures), dataArr[i]);
-    DOT.end = _.indexOf(marksCount(dataTemperatures), dataArr[i + 1]);
+    DOT.start = marksCount(dataTemperatures).indexOf(dataArr[i]);
+    DOT.end = marksCount(dataTemperatures).indexOf(dataArr[i + 1]);
     ctx!.moveTo(stepX * i + SIZES.MARGIN_X + 20, DOT.start * stepY);
     ctx!.lineTo(stepX * (i + 1) + SIZES.MARGIN_X + 20, DOT.end * stepY);
   }

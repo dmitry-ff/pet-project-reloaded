@@ -31,8 +31,9 @@ describe('Testing TemperatureChart component', () => {
     const component = shallow(<TemperatureChart loading={true} data={[]} />)
     expect(component.type()).toEqual(null)
   })
+
+
   it('Should return a Forward Ref to the Line chart', () => {
-    const initialState = null;
-    React.useState = jest.fn().mockImplementationOnce([initialState, {}])
+
   })
 })

@@ -25,18 +25,18 @@ const Chart = (props: { loading: boolean, data: TData[] }): EmotionJSX.Element =
       canvasRef.current.height = DPI_HEIGHT;
       canvasRef.current.width = DPI_WIDTH;
       const dataTemperatures: TDataTemperature = {
-        minT: _.map(data, item => {
+        minT: data.map(item => {
           let temp = item.day.mintemp_c;
-          return _.floor(temp);
+          return Math.floor(temp);
         }),
-        maxT: _.map(data, item => {
-          return _.floor(item.day.maxtemp_c);
+        maxT: data.map(item => {
+          return Math.floor(item.day.maxtemp_c);
         }),
-        avgT: _.map(data, item => {
-          return _.floor(item.day.avgtemp_c);
+        avgT: data.map(item => {
+          return Math.floor(item.day.avgtemp_c);
         }),
       }
-      const dates: string[] = _.map(data, item => {
+      const dates: string[] = data.map(item => {
         return `${MONTH_S[new Date(item.date).getMonth()]}, ${new Date(item.date).getDate()}`
       })
       const stepX: number = DPI_WIDTH / dates.length + 185;
