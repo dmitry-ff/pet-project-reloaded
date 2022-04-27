@@ -1,16 +1,21 @@
-import { HTMLAttributes, shallow, ShallowWrapper } from "enzyme";
+import { shallow } from "enzyme";
 import App from "./App";
 
-const setUp = () => shallow(<App />)
-
 describe('App component', () => {
-  let component: ShallowWrapper<HTMLAttributes, any, React.Component<{}, {}, any>>;
 
-  beforeEach(() => {
-    component = setUp()
-  });
   it('should render one routes element', () => {
-    let wrapper = component.find('Routes')
-    expect(wrapper.length).toEqual(1);
+    const component = shallow(<App />);
+    expect(component.find('Routes').length).toBe(1);
+  })
+
+  it('should render ten Route elements', () => {
+    const component = shallow(<App />);
+    expect(component.find('Route').length).toBe(10);
+  });
+
+  it('should render Navigation component', () => {
+    const component = shallow(<App />);
+    expect(component.find('Navigation').length).toBe(1);
   })
 })
+

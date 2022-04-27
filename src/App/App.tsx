@@ -7,21 +7,17 @@ import {
 import Navigation from '../Components/Navigation/Navigation';
 import Home from '../Pages/HomePage/Home/Home'
 import Charts from '../Pages/Charts/Charts';
-import styled from '@emotion/styled';
 import PieChart from '../Components/Charts/PieChart/PieChart';
 import DoughnutChart from '../Components/Charts/DoughnutChart/DoughnutChart';
 import BarChart from '../Components/Charts/BarChart/BarChart';
 import LineChart from '../Components/Charts/LineChart/LineChart'
 import { userData, lineUserData } from './data/Data';
 import Weather from '../Pages/Weather/Weather';
-import ReactFeatures from '../Pages/ReactFeatures/Features';
+import ReactFeatures from '../Pages/ReactFeatures/Features/Features';
 import { Chart, registerables } from 'chart.js';
+import { StyledComp } from './App.styled';
 
-const StyledComp = styled.div`
-    display:inline-block;
-    padding:1rem;
-    
-`
+
 
 function App() {
 

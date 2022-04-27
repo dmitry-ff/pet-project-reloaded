@@ -13,6 +13,8 @@ type TProps = {
   townName: string
 }
 
+
+
 describe('WeatherGetData', () => {
   it('should return Box and CircularProgress', () => {
     const wrapper = shallow(<WeatherGetData {...mockProps} />);
