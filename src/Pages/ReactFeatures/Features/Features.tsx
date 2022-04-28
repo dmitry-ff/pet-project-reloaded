@@ -21,15 +21,8 @@ const ReactFeatures: React.FC = (): EmotionJSX.Element => {
 
   const user = React.useMemo(() => { createUser(userCreate.name, userCreate.surname) }, [userCreate])
 
-  const sayHi = React.useCallback((text: string) => {
-    console.log(text);
-  }, []);
 
   const handleClick = () => setCount(count => count + 1)
-  React.useEffect(() => {
-    sayHi(message);
-    console.log(ref)
-  }, [sayHi, message, ref]);
 
   return (
     <>
@@ -45,7 +38,7 @@ const ReactFeatures: React.FC = (): EmotionJSX.Element => {
         >
           {count}
         </Button>
-        <Forward onClick={() => console.log('Click')} ref={ref} />
+        <Forward ref={ref} />
 
       </Styled.CeneteredComp>
     </>

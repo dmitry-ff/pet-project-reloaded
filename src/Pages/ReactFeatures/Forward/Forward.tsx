@@ -1,11 +1,6 @@
 import React, { forwardRef } from 'react';
 
-type TProps = {
-  onClick: () => void;
-}
-
-export const Forward = forwardRef((props: TProps, ref: React.Ref<HTMLDivElement>) => {
-  const { onClick } = props;
+export const Forward = forwardRef((props: {}, ref: React.Ref<HTMLDivElement>) => {
   return (
     <div ref={ref}></div>
   );
