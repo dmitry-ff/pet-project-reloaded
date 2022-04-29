@@ -4,20 +4,12 @@ import {
   Route,
   Routes
 } from 'react-router-dom';
-import Navigation from '../Components/Navigation/Navigation';
-import Home from '../Pages/HomePage/Home/Home'
-import Charts from '../Pages/Charts/Charts';
-import PieChart from '../Components/Charts/PieChart/PieChart';
-import DoughnutChart from '../Components/Charts/DoughnutChart/DoughnutChart';
-import BarChart from '../Components/Charts/BarChart/BarChart';
-import LineChart from '../Components/Charts/LineChart/LineChart'
-import { userData, lineUserData } from './data/Data';
-import Weather from '../Pages/Weather/Weather';
-import ReactFeatures from '../Pages/ReactFeatures/Features/Features';
+import { PieChart, DoughnutChart, BarChart, LineChart } from '../Components/ChartJS-charts-examples';
+import { Navigation } from '../Components';
+import { Charts, Home, ReactFeatures, Weather } from '../Pages';
+import { userData, lineUserData } from './data';
 import { Chart, registerables } from 'chart.js';
 import { StyledComp } from './App.styled';
-
-
 
 function App() {
 

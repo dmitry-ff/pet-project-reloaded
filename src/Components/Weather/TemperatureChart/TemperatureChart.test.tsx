@@ -1,10 +1,6 @@
-import { mount, shallow } from "enzyme";
-import renderer from 'react-test-renderer';
+import { shallow } from "enzyme";
 import TemperatureChart from "./TemperatureChart";
-import { TData } from "../types/TData";
 import React from "react";
-import { lineUserData } from "../../../App/data/Data";
-
 
 const data = [
   {

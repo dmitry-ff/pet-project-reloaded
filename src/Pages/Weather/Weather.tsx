@@ -1,5 +1,5 @@
 import React from 'react';
-import WeatherGetData from '../../Components/Weather/WeatherGetData/WeatherGetData'
+import { WeatherFetchData } from '../../Components/'
 import { Button, Box, Link, TextField } from '@mui/material';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 import { useFormik } from "formik";
@@ -66,7 +66,7 @@ const Weather: React.FC = (): EmotionJSX.Element => {
           </Button>
         </Box>
       </form>
-      {press && <WeatherGetData apiURL={url} townName={town} />}
+      {press && <WeatherFetchData apiURL={url} townName={town} />}
       <span>
         {'Powered by '}
         <Link
