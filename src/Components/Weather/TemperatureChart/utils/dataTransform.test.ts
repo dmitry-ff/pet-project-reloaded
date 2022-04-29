@@ -1,5 +1,6 @@
 import { dataTransform } from "./dataTransform";
-const mockDataInvalid = [];
+import { TData } from "../../types";
+const mockDataInvalid = [] as TData[];
 const mockData = [
   {
     date: '04-10-2022',

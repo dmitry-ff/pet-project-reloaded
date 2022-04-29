@@ -2,7 +2,6 @@ import { shallow } from "enzyme";
 import _ from "lodash";
 import BarChart from "./BarChart";
 import { Bar } from "react-chartjs-2";
-import renderer from 'react-test-renderer';
 
 // import { userData } from "../Data/Data";
 const userData = {
@@ -26,7 +25,6 @@ const userData = {
 
   ]
 }
-
 
 describe('DoughnutChart component', () => {
   it('should render BarChart component', () => {

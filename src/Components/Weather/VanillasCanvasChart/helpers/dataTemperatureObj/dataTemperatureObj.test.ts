@@ -1,6 +1,6 @@
 import { dataTemperatureObj } from "..";
-
-const mockDataInvalid = [];
+import { TData } from "../../../types";
+const mockDataInvalid = [] as TData[];
 
 const mockData = [
   {

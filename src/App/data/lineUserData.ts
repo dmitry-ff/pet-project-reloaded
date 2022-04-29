@@ -11,7 +11,7 @@ export const lineUserData = {
     },
     {
       label: 'Dataset 2',
-      data: _.reverse([1, 2, 3, 45, 6, 7]),
+      data: ([1, 2, 3, 45, 6, 7].reverse()),
       borderColor: 'rgb(53, 162, 235)',
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
       tension: 0.1
