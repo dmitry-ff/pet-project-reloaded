@@ -4,27 +4,14 @@ import { Button, Box, Link, TextField } from '@mui/material';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 import { useFormik } from "formik";
 import * as Styled from './Weather.styled'
+import { validate } from './utils/validateSchema';
 
-interface IFormik {
-  searchField: string,
-}
 
 const Weather: React.FC = (): EmotionJSX.Element => {
 
   const [url, setUrl] = React.useState<string>('');
   const [press, setPress] = React.useState<boolean>(false);
   const [town, setTown] = React.useState<string>('')
-
-  const validate = (values: IFormik,) => {
-    let errors = {} as IFormik;
-    if (!values.searchField) {
-      errors.searchField = 'Required'
-    } else if
-      (!/^([a-z\sа-яё]+)$/i.test(values.searchField)) {
-      errors.searchField = 'Incorrect Entry'
-    }
-    return errors;
-  };
 
   const formik = useFormik({
     initialValues: {

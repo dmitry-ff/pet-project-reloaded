@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme';
-import React from 'react';
+import React, { useRef } from 'react';
 import CanvasChart from './CanvasChart';
 import { TData } from '../types/TData';
 const mockData: TData[] = [
@@ -33,4 +33,19 @@ describe('CanvasChart component', () => {
     const wrapper = component.find('Styled(canvas)');
     expect(wrapper.length).toBe(1);
   })
+})
+// jest.mock('react', () => ({
+//   ...jest.requireActual('react'),
+//   useRef: jest.fn(),
+// }))
+
+
+// beforeEach(() => {
+//   jest.spyOn(React, 'useEffect').mockImplementation(f => f());
+// })
+// afterEach(() => {
+//   jest.restoreAllMocks();
+// });
+describe('API call testing', () => {
+
 })
