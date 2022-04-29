@@ -1,6 +1,5 @@
-import { xAxis } from "./xAxis";
-import { yAxis } from "./yAxis";
-import { TDataTemperature } from "../types/TDataTemperature";
+import { xAxis, yAxis } from '.'
+import { TDataTemperature } from "../../types/";
 
 type TCanvas = {
   (canvasRef: React.MutableRefObject<HTMLCanvasElement | null>,
@@ -11,7 +10,7 @@ type TCanvas = {
     dataTemperature: TDataTemperature
   ): void
 }
-export const axisDraw: TCanvas = (canvasRef, ctx, dates, stepX, stepY, dataTemperature) => {
+export const drawAxis: TCanvas = (canvasRef, ctx, dates, stepX, stepY, dataTemperature) => {
   ctx!.beginPath();
   ctx!.font = 'normal 1.1rem sans-serif';
   ctx!.strokeStyle = '#afb0af';

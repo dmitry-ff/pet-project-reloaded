@@ -31,9 +31,18 @@ describe('Testing TemperatureChart component', () => {
     const component = shallow(<TemperatureChart loading={true} data={[]} />)
     expect(component.type()).toEqual(null)
   })
+})
+beforeEach(() => {
+  jest.spyOn(React, 'useEffect').mockImplementation(f => f());
+})
+afterEach(() => {
+  jest.resetAllMocks();
+  jest.restoreAllMocks();
+})
 
+it('Should return null if loading is true', () => {
+  jest.spyOn(React, 'useEffect').mockImplementation(f => f());
 
-  it('Should return a Forward Ref to the Line chart', () => {
-
-  })
+  const component = shallow(<TemperatureChart loading={false} data={data} />)
+  expect(component.type()).toEqual(null)
 })

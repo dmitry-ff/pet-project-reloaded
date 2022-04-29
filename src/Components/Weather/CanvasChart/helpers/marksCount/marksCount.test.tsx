@@ -1,6 +1,5 @@
-import React from "react";
-import { TDataTemperature } from '../types/TDataTemperature'
-import { marksCount } from './marksCount';
+import { marksCount } from '..';
+
 const mockObj = {
   minT: [-1, -2, -10, 6],
   maxT: [2, 4, 3, 7],

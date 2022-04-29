@@ -1,6 +1,5 @@
-import { SIZES, DPI_HEIGHT } from "../data/Sizes";
-import { TCanvas } from '../types/Tcanvas';
-import { COLORS, TAGS } from '../data/initialData';
+import { SIZES, DPI_HEIGHT, COLORS, TAGS } from "../data/";
+import { TCanvas } from '../../types/';
 
 export const chartLegend: TCanvas = (canvasRef, ctx) => {
   for (let i = 0; i < COLORS.length; i++) {

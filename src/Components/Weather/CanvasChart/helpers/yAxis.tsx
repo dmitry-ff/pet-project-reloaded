@@ -1,6 +1,6 @@
-import { marksCount } from "../helpers/marksCount";
-import { TDataTemperature } from "../types/TDataTemperature";
-import { DPI_WIDTH } from '../data/Sizes';
+import { marksCount } from "../helpers/";
+import { TDataTemperature } from "../../types/";
+import { DPI_WIDTH } from '../data';
 type TCanvas = {
   (canvasRef: React.MutableRefObject<HTMLCanvasElement | null>,
     ctx: CanvasRenderingContext2D | null,

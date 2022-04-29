@@ -1,8 +1,7 @@
-import _ from "lodash";
-import { marksCount } from "./marksCount";
-import { TDataTemperature } from "../types/TDataTemperature";
-import { COLORS, DOT } from '../data/initialData'
-import { SIZES } from '../data/Sizes'
+import { marksCount } from ".";
+import { TDataTemperature } from "../../types";
+import { COLORS, DOT, SIZES } from '../data/'
+
 type TCanvas = {
   (canvasRef: React.MutableRefObject<HTMLCanvasElement | null>,
     ctx: CanvasRenderingContext2D | null,
@@ -14,7 +13,8 @@ type TCanvas = {
     dataTemperatures: TDataTemperature
   ): void
 }
-export const linesDraw: TCanvas = (canvasRef, ctx, dataArr = [], colorIndex = 0, dates, stepX, stepY, dataTemperatures) => {
+
+export const drawLines: TCanvas = (canvasRef, ctx, dataArr = [], colorIndex = 0, dates, stepX, stepY, dataTemperatures) => {
   ctx!.strokeStyle = `${COLORS[colorIndex]}`;
   ctx!.beginPath();
   ctx!.lineWidth = 5;
