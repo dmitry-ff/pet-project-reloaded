@@ -1,6 +1,7 @@
-import { shallow } from "enzyme";
+import { mount, shallow } from "enzyme";
 import TemperatureChart from "./TemperatureChart";
-import React from "react";
+import React, { useEffect } from "react";
+import 'jest-canvas-mock'
 
 const data = [
   {
@@ -20,25 +21,20 @@ const data = [
   }
 ]
 
+jest.mock('react-chartjs-2', () => ({
+  Line: () => null,
+}))
+
+describe('TemperatureChart component', () => {
 
 
-describe('Testing TemperatureChart component', () => {
-  it('Should return null if loading is true', () => {
-    const component = shallow(<TemperatureChart loading={true} data={[]} />)
-    expect(component.type()).toEqual(null)
+  it('should return null if loading is true', () => {
+    const component = shallow(<TemperatureChart loading={true} data={data} />)
+    expect(component).toEqual({});
   })
-})
-beforeEach(() => {
-  jest.spyOn(React, 'useEffect').mockImplementation(f => f());
-})
-afterEach(() => {
-  jest.resetAllMocks();
-  jest.restoreAllMocks();
-})
-
-it('Should return null if loading is true', () => {
-  jest.spyOn(React, 'useEffect').mockImplementation(f => f());
-
-  const component = shallow(<TemperatureChart loading={false} data={data} />)
-  expect(component.type()).toEqual(null)
+  it('should return Line if loading is false', () => {
+    const wrapper = shallow(<TemperatureChart loading={false} data={data} />);
+    console.log(wrapper.debug())
+    expect(wrapper.find('Line').length).toBe(1);
+  })
 })

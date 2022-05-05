@@ -11,11 +11,13 @@ type TCanvas = {
   ): void
 }
 export const drawAxis: TCanvas = (canvasRef, ctx, dates, stepX, stepY, dataTemperature) => {
-  ctx!.beginPath();
-  ctx!.font = 'normal 1.1rem sans-serif';
-  ctx!.strokeStyle = '#afb0af';
-  xAxis(canvasRef, ctx, dates, stepX, stepY, dataTemperature);
-  yAxis(canvasRef, ctx, stepY, dataTemperature);
-  ctx!.stroke();
-  ctx!.closePath();
+  if (ctx) {
+    ctx.beginPath();
+    ctx.font = 'normal 1.1rem sans-serif';
+    ctx.strokeStyle = '#afb0af';
+    xAxis(canvasRef, ctx, dates, stepX, stepY, dataTemperature);
+    yAxis(canvasRef, ctx, stepY, dataTemperature);
+    ctx.stroke();
+    ctx.closePath();
+  }
 };
