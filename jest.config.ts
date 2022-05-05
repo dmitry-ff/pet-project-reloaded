@@ -1,5 +1,4 @@
 import type { Config } from '@jest/types';
-import enableHooks from 'jest-react-hooks-shallow';
 
 module.exports = {
   setupFilesAfterEnv: [
@@ -7,7 +6,6 @@ module.exports = {
   ]
 };
 
-enableHooks(jest);
 
 const config: Config.InitialOptions = {
   verbose: true,

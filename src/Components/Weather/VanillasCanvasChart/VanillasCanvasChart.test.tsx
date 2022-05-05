@@ -1,7 +1,13 @@
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import React from 'react';
 import CanvasChart from './VanillasCanvasChart';
+import 'jest-canvas-mock'
 import { TData } from '../types/TData';
+import { drawAxis, drawCharts, chartLegend } from './helpers';
+const mockDrawAxis = jest.fn(drawAxis);
+const mockDrawCharts = jest.fn(drawCharts);
+const mockChartLegend = jest.fn(chartLegend);
+
 const mockData: TData[] = [
   {
     date: '12-12-2001',
@@ -20,6 +26,8 @@ const mockData: TData[] = [
   }
 ]
 
+
+const getContext = jest.fn();
 describe('CanvasChart component', () => {
   const setUp = (loading: boolean, mockData: TData[]) => shallow(<CanvasChart loading={loading} data={mockData} />)
 
@@ -33,11 +41,12 @@ describe('CanvasChart component', () => {
     const wrapper = component.find('Styled(canvas)');
     expect(wrapper.length).toBe(1);
   })
+  it('useRef testing', () => {
+    const useRefSpy = jest.spyOn(React, 'useRef').mockReturnValueOnce({ current: document.createElement('canvas') });
+    const mock = jest.fn();
+    const component = shallow(<CanvasChart loading={false} data={mockData} />)
+    console.log(component.debug())
+  })
 })
 
-beforeEach(() => {
-  jest.spyOn(React, 'useEffect').mockImplementation(f => f());
-})
-afterEach(() => {
-  jest.restoreAllMocks();
-});
+
