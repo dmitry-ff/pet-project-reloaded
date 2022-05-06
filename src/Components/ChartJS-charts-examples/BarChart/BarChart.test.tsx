@@ -1,9 +1,7 @@
 import { shallow } from "enzyme";
-import _ from "lodash";
 import BarChart from "./BarChart";
 import { Bar } from "react-chartjs-2";
 
-// import { userData } from "../Data/Data";
 const userData = {
 
   labels: ['Red', 'Blue', 'Yellow',],
@@ -17,7 +15,7 @@ const userData = {
     },
     {
       label: 'Dataset 2',
-      data: _.reverse([1, 2, 3, 45, 6, 7]),
+      data: ([1, 2, 3, 45, 6, 7].reverse()),
       borderColor: 'rgb(53, 162, 235)',
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
       tension: 0.1
