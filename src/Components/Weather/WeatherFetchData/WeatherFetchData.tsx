@@ -5,7 +5,8 @@ import { CircularProgress, Box } from '@mui/material';
 import { TResponse, TData, TWeatherFetchData } from "../types";
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 import { Switch } from '@mui/material';
-import * as Styled from './WeatherGetData.styled';
+import * as Styled from './WeatherFetchData.styled';
+import { fetchData } from './utils/fetchData';
 
 
 
@@ -17,7 +18,7 @@ function WeatherFetchData({ apiURL, townName }: TWeatherFetchData): EmotionJSX.E
   const [isSwitch, setIsSwitch] = React.useState<boolean>(true);
 
   React.useEffect(() => {
-    axios.get<TResponse>(apiURL)
+    fetchData<TResponse>(apiURL)
       .then(res => {
         setLoading(true);
         let items = res.data;

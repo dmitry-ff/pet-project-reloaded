@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { TDataTemperature } from '../types/TDataTemperature'
+import { TDataTemperature } from '../../../types/TDataTemperature'
 
 export function marksCount(dataTemperatures: TDataTemperature) {
   let marksArr: number[] = [];

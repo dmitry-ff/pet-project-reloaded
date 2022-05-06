@@ -3,10 +3,6 @@ import React from 'react';
 import CanvasChart from './VanillasCanvasChart';
 import 'jest-canvas-mock'
 import { TData } from '../types/TData';
-import { drawAxis, drawCharts, chartLegend } from './helpers';
-const mockDrawAxis = jest.fn(drawAxis);
-const mockDrawCharts = jest.fn(drawCharts);
-const mockChartLegend = jest.fn(chartLegend);
 
 const mockData: TData[] = [
   {
@@ -27,7 +23,6 @@ const mockData: TData[] = [
 ]
 
 
-const getContext = jest.fn();
 describe('CanvasChart component', () => {
   const setUp = (loading: boolean, mockData: TData[]) => shallow(<CanvasChart loading={loading} data={mockData} />)
 
@@ -45,7 +40,6 @@ describe('CanvasChart component', () => {
     const useRefSpy = jest.spyOn(React, 'useRef').mockReturnValueOnce({ current: document.createElement('canvas') });
     const mock = jest.fn();
     const component = shallow(<CanvasChart loading={false} data={mockData} />)
-    console.log(component.debug())
   })
 })
 
