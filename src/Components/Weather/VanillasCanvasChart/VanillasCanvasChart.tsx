@@ -7,7 +7,7 @@ import * as Styled from './VanillasCanvasChart.styled'
 import { DPI_HEIGHT, DPI_WIDTH, SIZES, VIEW_HEIGHT } from "./data";
 
 const VanillasCanvasChart = (props: { loading: boolean, data: TData[] }): EmotionJSX.Element => {
-  const { loading, data } = props;
+  const { data } = props;
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
   const canvasCtxRef = React.useRef<CanvasRenderingContext2D | null>(null);
 

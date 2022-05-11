@@ -6,8 +6,8 @@ module.exports = {
   ]
 };
 
-
 const config: Config.InitialOptions = {
   verbose: true,
+  coveragePathIgnorePatterns: ['src/Components/Weather/VanillasCanvasChart/helpers']
 };
 export default config;

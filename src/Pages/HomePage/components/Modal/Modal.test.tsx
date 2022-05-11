@@ -1,4 +1,4 @@
-import { shallow } from "enzyme";
+import { mount, shallow } from "enzyme";
 import Modal from "./Modal";
 import dog from '../../../../Images/dog.svg'
 import renderer from 'react-test-renderer';

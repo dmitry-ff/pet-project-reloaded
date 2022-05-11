@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 import { CenteredHeader } from './Home.styled';
 import Modal from '../components/Modal/Modal';

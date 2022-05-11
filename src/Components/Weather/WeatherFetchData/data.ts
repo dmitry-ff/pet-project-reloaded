@@ -1,17 +1,17 @@
 export const mockResponse = {
   "forecastday": [
     {
-      "date": "2022-05-06",
+      "date": "2022-05-11",
       "day": {
-        "maxtemp_c": 13.6,
-        "mintemp_c": 2.9,
-        "avgtemp_c": 8.8,
-        "maxwind_kph": 15.5,
-        "daily_chance_of_rain": 0,
+        "maxtemp_c": 14.8,
+        "mintemp_c": 5.2,
+        "avgtemp_c": 9.2,
+        "maxwind_kph": 27.7,
+        "daily_chance_of_rain": 78,
         "daily_chance_of_snow": 0,
         "condition": {
-          "text": "Partly cloudy",
-          "icon": "//cdn.weatherapi.com/weather/64x64/day/116.png"
+          "text": "Patchy rain possible",
+          "icon": "//cdn.weatherapi.com/weather/64x64/day/176.png"
         }
       },
       "astro": {},
@@ -91,17 +91,17 @@ export const mockResponse = {
       ]
     },
     {
-      "date": "2022-05-07",
+      "date": "2022-05-12",
       "day": {
-        "maxtemp_c": 13.8,
-        "mintemp_c": 5.3,
-        "avgtemp_c": 10.3,
-        "maxwind_kph": 19.4,
-        "daily_chance_of_rain": 0,
+        "maxtemp_c": 19.2,
+        "mintemp_c": 6.0,
+        "avgtemp_c": 12.2,
+        "maxwind_kph": 34.2,
+        "daily_chance_of_rain": 87,
         "daily_chance_of_snow": 0,
         "condition": {
-          "text": "Partly cloudy",
-          "icon": "//cdn.weatherapi.com/weather/64x64/day/116.png"
+          "text": "Moderate rain",
+          "icon": "//cdn.weatherapi.com/weather/64x64/day/302.png"
         }
       },
       "astro": {},
@@ -181,17 +181,17 @@ export const mockResponse = {
       ]
     },
     {
-      "date": "2022-05-08",
+      "date": "2022-05-13",
       "day": {
-        "maxtemp_c": 15.8,
-        "mintemp_c": 5.9,
-        "avgtemp_c": 10.8,
-        "maxwind_kph": 24.1,
-        "daily_chance_of_rain": 0,
+        "maxtemp_c": 16.5,
+        "mintemp_c": 8.4,
+        "avgtemp_c": 11.8,
+        "maxwind_kph": 28.4,
+        "daily_chance_of_rain": 89,
         "daily_chance_of_snow": 0,
         "condition": {
-          "text": "Overcast",
-          "icon": "//cdn.weatherapi.com/weather/64x64/day/122.png"
+          "text": "Patchy rain possible",
+          "icon": "//cdn.weatherapi.com/weather/64x64/day/176.png"
         }
       },
       "astro": {},
@@ -272,3 +272,4 @@ export const mockResponse = {
     }
   ]
 }
+

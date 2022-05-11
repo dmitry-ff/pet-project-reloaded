@@ -1,4 +1,4 @@
-import _, { isEmpty } from 'lodash';
+import { isEmpty } from 'lodash';
 import { WEEK_S } from "../data/WEEK_S";
 import * as Styled from './WeatherBlock.styled'
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';

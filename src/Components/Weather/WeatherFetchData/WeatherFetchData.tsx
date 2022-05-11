@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { TemperatureChart, WeatherBlock, VanillasCanvasChart } from '..';
 import { CircularProgress, Box } from '@mui/material';
 import { TResponse, TData, TWeatherFetchData } from "../types";

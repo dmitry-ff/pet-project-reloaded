@@ -21,7 +21,6 @@ describe('WeatherGetData component', () => {
     expect(wrapper.find('ForwardRef(Box)')).toHaveLength(1);
     expect(wrapper.find('ForwardRef(CircularProgress)')).toHaveLength(1);
   })
-  jest.mock('axios');
 
   it('Good response', async () => {
 
@@ -41,12 +40,15 @@ describe('WeatherGetData component', () => {
 
     // expect(response.data.forecast).toBe([])
 
-    const message = 'Nework Error';
-    mockAxios.get.mockRejectedValueOnce(new Error(message));
+    const error = new Error('Network Error');
 
-    const response = await fetchData('asdfsadkjflsadf');
+    mockAxios.get.mockRejectedValueOnce(error);
 
-    expect(response.status).toEqual(400)
+    try {
+      const response = await fetchData('asdfsadkjflsadf');
+    } catch (e) {
+      expect(e).toEqual(error);
+    }
   })
 
 })
